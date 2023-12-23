@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3okeve70ia0r"]
+
+[ext_resource type="PackedScene" uid="uid://b4dj6n7yyc0ir" path="res://objects/ui/MainMenuSelection.tscn" id="1_nlenw"]
+[ext_resource type="Script" path="res://scenes/SyobonTitle.gd" id="1_pnxlh"]
+[ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="2_8loep"]
+[ext_resource type="PackedScene" uid="uid://b2p2g2e5bpu77" path="res://objects/ui/Title.tscn" id="3_p010r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6j8rc"]
+font = ExtResource("2_8loep")
+
+[node name="SyobonTitle" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_pnxlh")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 643.0
+offset_bottom = 479.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Container"]
+layout_mode = 2
+offset_top = 280.0
+offset_right = 640.0
+offset_bottom = 460.0
+size_flags_vertical = 8
+theme_override_constants/separation = 182
+alignment = 1
+
+[node name="MainMenuSelection" parent="Container/HBoxContainer" instance=ExtResource("1_nlenw")]
+layout_mode = 2
+
+[node name="MainMenuSelection2" parent="Container/HBoxContainer" instance=ExtResource("1_nlenw")]
+layout_mode = 2
+option_name = "Options"
+
+[node name="ColorRect" type="ColorRect" parent="Container"]
+layout_mode = 0
+offset_right = 180.0
+offset_bottom = 180.0
+
+[node name="Title" parent="Container" instance=ExtResource("3_p010r")]
+position = Vector2(320, 120)
+
+[node name="Label" type="Label" parent="."]
+offset_top = 460.0
+offset_right = 128.0
+offset_bottom = 483.0
+text = "VERSION INDEV (PRE-PRE ALPHA)"
+label_settings = SubResource("LabelSettings_6j8rc")

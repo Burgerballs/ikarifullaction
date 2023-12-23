@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4dj6n7yyc0ir"]
+
+[ext_resource type="Texture2D" uid="uid://b88m4uymuturx" path="res://images/mm_play.png" id="1_mapg8"]
+[ext_resource type="Script" path="res://objects/ui/MainMenuSelection.gd" id="1_oq8gg"]
+[ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="2_jibv5"]
+
+[sub_resource type="Gradient" id="Gradient_i6ell"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_22fdr"]
+gradient = SubResource("Gradient_i6ell")
+width = 180
+height = 180
+fill_from = Vector2(1, 1)
+fill_to = Vector2(1, 0.853211)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7cwob"]
+font = ExtResource("2_jibv5")
+
+[node name="MainMenuSelection" type="ColorRect"]
+texture_filter = 1
+custom_minimum_size = Vector2(180, 180)
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_oq8gg")
+
+[node name="img" type="Sprite2D" parent="."]
+texture = ExtResource("1_mapg8")
+offset = Vector2(90, 90)
+
+[node name="Gradient" type="Sprite2D" parent="."]
+texture_filter = 2
+texture_repeat = 1
+texture = SubResource("GradientTexture2D_22fdr")
+offset = Vector2(90, 90)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 157.0
+offset_right = 75.0
+offset_bottom = 180.0
+text = "Play"
+label_settings = SubResource("LabelSettings_7cwob")

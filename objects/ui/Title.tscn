@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2p2g2e5bpu77"]
+
+[ext_resource type="Texture2D" uid="uid://b0ho8u2dmxluw" path="res://images/mm_titleswirl.png" id="1_pxfsa"]
+[ext_resource type="Script" path="res://objects/ui/Title.gd" id="1_q8oof"]
+[ext_resource type="Texture2D" uid="uid://nki18x06sb2r" path="res://images/mm_title.png" id="2_u71jt"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_q8oof")
+
+[node name="titleswirl" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_pxfsa")
+
+[node name="titletext" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_u71jt")

@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://cl7yxyxctm8h6"]
+
+[ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="1_r7686"]
+[ext_resource type="Texture2D" uid="uid://pikfmt71iou3" path="res://images/gui shit.png" id="2_ub0e1"]
+
+[sub_resource type="Gradient" id="Gradient_fjijl"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5hdwx"]
+gradient = SubResource("Gradient_fjijl")
+width = 1
+height = 30
+fill_to = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_abn8o"]
+font = ExtResource("1_r7686")
+
+[node name="SyobonOptions" type="CanvasLayer"]
+
+[node name="Panel" type="TextureRect" parent="."]
+texture_filter = 1
+offset_left = 1.0
+offset_right = 640.0
+offset_bottom = 30.0
+texture = SubResource("GradientTexture2D_5hdwx")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+label_settings = SubResource("LabelSettings_abn8o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 300.0
+offset_bottom = 450.0
+texture = ExtResource("2_ub0e1")
+region_rect = Rect2(0, 0, 90, 90)
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="."]
+texture_filter = 1
+offset_left = 330.0
+offset_top = 60.0
+offset_right = 570.0
+offset_bottom = 450.0
+texture = ExtResource("2_ub0e1")
+region_rect = Rect2(0, 0, 90, 90)
+patch_margin_left = 30
+patch_margin_top = 30
+patch_margin_right = 30
+patch_margin_bottom = 30
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

@@ -1,0 +1,107 @@
+[gd_scene load_steps=8 format=3 uid="uid://1f37leodirp1"]
+
+[ext_resource type="Texture2D" uid="uid://dd3iqe2iqvm44" path="res://images/HUD/dialogue_box.png" id="1_ad62g"]
+[ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="2_03aiv"]
+
+[sub_resource type="Animation" id="Animation_rfgy7"]
+length = 0.246
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.082, 0.164),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 640, 480), Rect2(640, 0, 640, 480), Rect2(1280, 0, 640, 480)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.082, 0.164),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_twt2p"]
+length = 0.246
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.082, 0.164),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(1920, 0, 640, 480), Rect2(2560, 0, 640, 480), Rect2(3200, 0, 640, 480)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.082, 0.164),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6g3an"]
+_data = {
+"box_left": SubResource("Animation_rfgy7"),
+"box_right": SubResource("Animation_twt2p")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_k88ws"]
+font = ExtResource("2_03aiv")
+
+[sub_resource type="LabelSettings" id="LabelSettings_a6csu"]
+font = ExtResource("2_03aiv")
+font_color = Color(0, 0, 0, 1)
+
+[node name="DialogueBox" type="Node2D"]
+texture_filter = 1
+texture_repeat = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ad62g")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 640, 480)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_6g3an")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 346.0
+offset_right = 144.0
+offset_bottom = 381.0
+text = "JIBBLE"
+label_settings = SubResource("LabelSettings_k88ws")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 385.0
+offset_right = 160.0
+offset_bottom = 420.0
+text = "Do you really think you can just \"beat\" JIBBLE???
+You are one crazy guy... gurl uhh, uhhh i dunno what r  ur pronouns "
+label_settings = SubResource("LabelSettings_a6csu")

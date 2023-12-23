@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvtcjnox70rs7"]
+
+[ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="1_4jnma"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4640s"]
+font = ExtResource("1_4jnma")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Score" type="Label"]
+texture_filter = 1
+text = "Score: 00000000"
+label_settings = SubResource("LabelSettings_4640s")
+horizontal_alignment = 2

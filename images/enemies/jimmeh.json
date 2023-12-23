@@ -1,0 +1,90 @@
+{ "frames": {
+   "jimmeh 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 30, "h": 31 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 5, "w": 30, "h": 31 },
+    "sourceSize": { "w": 41, "h": 36 },
+    "duration": 100
+   },
+   "jimmeh 1.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 30, "h": 31 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 5, "w": 30, "h": 31 },
+    "sourceSize": { "w": 41, "h": 36 },
+    "duration": 100
+   },
+   "jimmeh 2.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 30, "h": 31 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 5, "w": 30, "h": 31 },
+    "sourceSize": { "w": 41, "h": 36 },
+    "duration": 100
+   },
+   "jimmeh 3.aseprite": {
+    "frame": { "x": 30, "y": 0, "w": 30, "h": 31 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 5, "w": 30, "h": 31 },
+    "sourceSize": { "w": 41, "h": 36 },
+    "duration": 100
+   },
+   "jimmeh 4.aseprite": {
+    "frame": { "x": 30, "y": 0, "w": 30, "h": 31 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 5, "w": 30, "h": 31 },
+    "sourceSize": { "w": 41, "h": 36 },
+    "duration": 100
+   },
+   "jimmeh 5.aseprite": {
+    "frame": { "x": 30, "y": 0, "w": 30, "h": 31 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 5, "w": 30, "h": 31 },
+    "sourceSize": { "w": 41, "h": 36 },
+    "duration": 100
+   },
+   "jimmeh 6.aseprite": {
+    "frame": { "x": 0, "y": 31, "w": 30, "h": 31 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 5, "w": 30, "h": 31 },
+    "sourceSize": { "w": 41, "h": 36 },
+    "duration": 100
+   },
+   "jimmeh 7.aseprite": {
+    "frame": { "x": 0, "y": 31, "w": 30, "h": 31 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 5, "w": 30, "h": 31 },
+    "sourceSize": { "w": 41, "h": 36 },
+    "duration": 100
+   },
+   "jimmeh 8.aseprite": {
+    "frame": { "x": 0, "y": 31, "w": 30, "h": 31 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 5, "y": 5, "w": 30, "h": 31 },
+    "sourceSize": { "w": 41, "h": 36 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.2.40-x64",
+  "image": "jimmeh.png",
+  "format": "RGBA8888",
+  "size": { "w": 60, "h": 62 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Flattened", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}
