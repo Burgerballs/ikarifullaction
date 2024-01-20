@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://rk2d3ls84q3m"]
+
+[ext_resource type="Script" path="res://maps/BaseMap.gd" id="1_fl3ra"]
+[ext_resource type="AudioStream" uid="uid://cug0adikyas2v" path="res://audio/bgm/BGM_clod_valley.ogg" id="2_bumex"]
+[ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="3_cm4n2"]
+[ext_resource type="PackedScene" uid="uid://da32itsrva28p" path="res://objects/blocks/QMark.tscn" id="4_0tf30"]
+
+[node name="Blocktest" type="Node2D"]
+script = ExtResource("1_fl3ra")
+bgm = ExtResource("2_bumex")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("3_cm4n2")
+format = 2
+layer_0/tile_data = PackedInt32Array(196600, 1, 0, 196601, 1, 0, 196602, 1, 0, 196603, 1, 0, 196604, 1, 0, 196605, 1, 0, 196606, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131084, 1, 0, 131083, 1, 0, 131082, 1, 0, 131090, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 0, 131097, 1, 0, 196599, 1310721, 0, 196598, 1310721, 0, 196597, 1310721, 0, 196596, 1310721, 0, 196595, 1310721, 0, 196594, 1310721, 0, 196593, 1310721, 0, 196592, 1310721, 0, 196591, 1310721, 0, 196590, 1310721, 0, 131098, 1, 0, 131099, 1, 0, 131100, 1, 0, 131101, 1, 0, 131102, 1, 0)
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(-55, -50)
+
+[node name="QMark" parent="." instance=ExtResource("4_0tf30")]
+position = Vector2(300, -30)

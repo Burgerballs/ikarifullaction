@@ -1,0 +1,490 @@
+{ "frames": {
+   "itembloxs 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 1.aseprite": {
+    "frame": { "x": 43, "y": 0, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 2.aseprite": {
+    "frame": { "x": 86, "y": 0, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 3.aseprite": {
+    "frame": { "x": 129, "y": 0, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 4.aseprite": {
+    "frame": { "x": 172, "y": 0, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 5.aseprite": {
+    "frame": { "x": 215, "y": 0, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 6.aseprite": {
+    "frame": { "x": 258, "y": 0, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 7.aseprite": {
+    "frame": { "x": 0, "y": 43, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 8.aseprite": {
+    "frame": { "x": 43, "y": 43, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 9.aseprite": {
+    "frame": { "x": 86, "y": 43, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 10.aseprite": {
+    "frame": { "x": 129, "y": 43, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 11.aseprite": {
+    "frame": { "x": 172, "y": 43, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 12.aseprite": {
+    "frame": { "x": 215, "y": 43, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 13.aseprite": {
+    "frame": { "x": 258, "y": 43, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 14.aseprite": {
+    "frame": { "x": 0, "y": 86, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 15.aseprite": {
+    "frame": { "x": 43, "y": 86, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 16.aseprite": {
+    "frame": { "x": 86, "y": 86, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 17.aseprite": {
+    "frame": { "x": 129, "y": 86, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 18.aseprite": {
+    "frame": { "x": 172, "y": 86, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 19.aseprite": {
+    "frame": { "x": 215, "y": 86, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 20.aseprite": {
+    "frame": { "x": 258, "y": 86, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 21.aseprite": {
+    "frame": { "x": 0, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 22.aseprite": {
+    "frame": { "x": 43, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 23.aseprite": {
+    "frame": { "x": 43, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 24.aseprite": {
+    "frame": { "x": 43, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 25.aseprite": {
+    "frame": { "x": 43, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 26.aseprite": {
+    "frame": { "x": 86, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 27.aseprite": {
+    "frame": { "x": 86, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 28.aseprite": {
+    "frame": { "x": 86, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 29.aseprite": {
+    "frame": { "x": 86, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 30.aseprite": {
+    "frame": { "x": 129, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 31.aseprite": {
+    "frame": { "x": 129, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 32.aseprite": {
+    "frame": { "x": 129, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 33.aseprite": {
+    "frame": { "x": 129, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 34.aseprite": {
+    "frame": { "x": 172, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 35.aseprite": {
+    "frame": { "x": 172, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 36.aseprite": {
+    "frame": { "x": 172, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 37.aseprite": {
+    "frame": { "x": 172, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 38.aseprite": {
+    "frame": { "x": 215, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 39.aseprite": {
+    "frame": { "x": 258, "y": 129, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 40.aseprite": {
+    "frame": { "x": 0, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 41.aseprite": {
+    "frame": { "x": 43, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 42.aseprite": {
+    "frame": { "x": 86, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 43.aseprite": {
+    "frame": { "x": 86, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 44.aseprite": {
+    "frame": { "x": 86, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 45.aseprite": {
+    "frame": { "x": 86, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 46.aseprite": {
+    "frame": { "x": 86, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 47.aseprite": {
+    "frame": { "x": 129, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 48.aseprite": {
+    "frame": { "x": 129, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 49.aseprite": {
+    "frame": { "x": 129, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 50.aseprite": {
+    "frame": { "x": 129, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 51.aseprite": {
+    "frame": { "x": 129, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 52.aseprite": {
+    "frame": { "x": 172, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 53.aseprite": {
+    "frame": { "x": 215, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 54.aseprite": {
+    "frame": { "x": 258, "y": 172, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 55.aseprite": {
+    "frame": { "x": 0, "y": 215, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   },
+   "itembloxs 56.aseprite": {
+    "frame": { "x": 43, "y": 215, "w": 43, "h": 43 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 43, "h": 43 },
+    "sourceSize": { "w": 43, "h": 43 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.2-x64",
+  "image": "itembloxs.png",
+  "format": "RGBA8888",
+  "size": { "w": 301, "h": 258 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "idle1", "from": 0, "to": 5, "direction": "forward", "color": "#000000ff" },
+   { "name": "hit1", "from": 6, "to": 9, "direction": "forward", "color": "#000000ff" },
+   { "name": "empty1", "from": 10, "to": 10, "direction": "forward", "color": "#000000ff" },
+   { "name": "idle2", "from": 11, "to": 16, "direction": "forward", "color": "#000000ff" },
+   { "name": "hit2", "from": 17, "to": 20, "direction": "forward", "color": "#000000ff" },
+   { "name": "empty2", "from": 21, "to": 21, "direction": "forward", "color": "#000000ff" },
+   { "name": "idle3", "from": 22, "to": 37, "direction": "forward", "color": "#000000ff" },
+   { "name": "hit3", "from": 38, "to": 41, "direction": "forward", "color": "#000000ff" },
+   { "name": "empty3", "from": 42, "to": 51, "direction": "forward", "color": "#000000ff" },
+   { "name": "idle4", "from": 52, "to": 52, "direction": "forward", "color": "#000000ff" },
+   { "name": "hit4", "from": 53, "to": 55, "direction": "forward", "color": "#000000ff" },
+   { "name": "empty4", "from": 56, "to": 56, "direction": "forward", "color": "#000000ff" }
+  ],
+  "layers": [
+   { "name": "Layer 4", "opacity": 255, "blendMode": "normal" },
+   { "name": "Flattened", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 2", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 3", "opacity": 122, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

@@ -1,18 +1,14 @@
 extends Node
-
+# A modified version of code by CrowPlexus!!
 var _cfg_file :ConfigFile
 var _defaults :Dictionary = {}
-
 const _CFG_PATH = "user://settings.cfg"
-
-var limited_lives:bool = false # If set to false you are given a game over screen when the life counter goes below zero!
-var enemy_speed:float = 1.0 # Sets how fast the enemies move, makes for some funny scenarios!
-var score_counter:bool = false # Adds a score counter to the game!
-var enemies_are_magnets:bool = false # You become uncontrollably attracted to the enemies when too close! BEWARE...
-var triple_jump:bool = false # Adds a triple jump to the game, like the New Super Mario Bros games!
-var auto_jump:bool = false # Makes it so you automatically jump immediately when touching the ground when holding JUMP, like original Syobon Action!
-var outbreak_mode:bool = false # All of the enemies are now poison mushrooms!
-
+var game_scale = 2:
+	set(v): 
+		var window = get_window()
+		window.size = Vector2i(640 * v, 480 * v)
+		window.position = DisplayServer.screen_get_size()/2 - (window.size/2)
+		game_scale = v
 var framerate_cap :int = 120:
 	set(v): Engine.max_fps = v; framerate_cap = v
 var vsync :bool = true:
@@ -29,6 +25,7 @@ var controls :Dictionary = {
 	"jump": ['Space', 'Z'],
 	"dash": ['Shift', 'X'],
 	"enter": ['Enter', 'None'],
+	"back": ['Escape', 'None'],
 	"suicide": ['K', 'R']
 }
 

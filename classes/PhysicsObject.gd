@@ -4,20 +4,17 @@ extends CharacterBody2D
 var lifetime:float
 var enablePhysics = true
 var gravity = Vector2(0, 10)
-var FloorNormal = Vector2(0, 1)
-var snapToGround = true;
-var isJumping = false
+var gravityDefault = Vector2(0, 10)
+var snapToGround = false
 var previousVelocity = Vector3.ZERO
 func _physics_process(delta):
 	if (enablePhysics):
 		lifetime += delta
 
-		if (velocity.y == 0):
-			isJumping = false
 		#If we're not on the ground, add gravity
 		if (!is_on_floor() || !snapToGround):
-			velocity.y += gravity.y;
-		elif (velocity.y != 0 && !isJumping):
+			velocity.y += (gravity.y/Globals.diffPhysicsProc);
+		elif (velocity.y != 0):
 			velocity.y = 0;
 
 		#If we're running into a wall, don't build up force

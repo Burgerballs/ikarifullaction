@@ -3,7 +3,10 @@ extends CanvasLayer
 @onready var text = $Label
 @onready var sfx = $SFX
 @onready var music = $MUSIC
-var currentLevel = 'world_1/level_1'
+var diffPhysicsProc:
+	get:
+		return Engine.physics_ticks_per_second / 120 
+var currentLevel = 'testicals/jumptest'
 func enter_level(level):
 	currentLevel = level
 	get_tree().change_scene_to_file('res://scenes/SyobonGame.tscn')

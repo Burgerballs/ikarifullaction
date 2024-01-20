@@ -12,7 +12,6 @@ layer = 99
 script = ExtResource("1_ro1it")
 
 [node name="Label" type="Label" parent="."]
-visible = false
 texture_filter = 1
 texture_repeat = 1
 offset_left = 3.0
