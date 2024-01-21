@@ -18,11 +18,3 @@ func _physics_process(delta):
 	applyForce(Vector2(240*delta*direction,0),20)
 	if(abs(velocity.x) > speedLimit):
 		velocity.x = speedLimit * direction;
-
-#func _on_hurting_area_body_entered(body):
-#	if body.velocity.y == 0:
-#		print('im yo opp now cuz im hurtingn youuuu')
-#		body.get_parent().KILL_them()
-#	elif body.velocity.y > 0:
-#		print('sdklsd')
-#		emit_signal('_on_hit_by_player', self)

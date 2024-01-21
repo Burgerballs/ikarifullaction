@@ -5,6 +5,7 @@ signal _on_hit_player()
 signal _on_hit_by_player(enemy)
 var enemyType = ''
 var airborne = false
+var movement_behaviour:Callable
 func _physics_process(delta):
 	super._physics_process(delta)
 	if is_on_wall():

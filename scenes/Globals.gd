@@ -6,7 +6,7 @@ extends CanvasLayer
 var diffPhysicsProc:
 	get:
 		return Engine.physics_ticks_per_second / 120 
-var currentLevel = 'testicals/jumptest'
+var currentLevel = 'testicals/enemytest'
 func enter_level(level):
 	currentLevel = level
 	get_tree().change_scene_to_file('res://scenes/SyobonGame.tscn')
