@@ -4,21 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bvtcjnox70rs7" path="res://objects/ui/HUD/Score.tscn" id="2_yvx3a"]
 [ext_resource type="Texture2D" uid="uid://gy4lkcb76gsm" path="res://objects/ui/HUD/epic images.png" id="3_mrhd4"]
 
-[sub_resource type="Animation" id="Animation_kvaqb"]
-resource_name = "ikari"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(84, 89, 273, 275)]
-}
-
 [sub_resource type="Animation" id="Animation_2g3tu"]
 length = 0.001
 tracks/0/type = "value"
@@ -34,6 +19,21 @@ tracks/0/keys = {
 "values": [Rect2(0, 0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_kvaqb"]
+resource_name = "ikari"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(84, 89, 273, 275)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ichqs"]
 _data = {
 "RESET": SubResource("Animation_2g3tu"),
@@ -43,31 +43,32 @@ _data = {
 [node name="HUD" type="CanvasLayer"]
 
 [node name="CoinCounter" parent="." instance=ExtResource("1_m7rsb")]
-offset_left = -8.0
-offset_top = -5.0
-offset_right = 57.0
-offset_bottom = 27.0
+offset_left = 594.0
+offset_top = 15.0
+offset_right = 659.0
+offset_bottom = 47.0
 
 [node name="Score" parent="." instance=ExtResource("2_yvx3a")]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -122.0
-offset_right = -2.0
-offset_bottom = 26.0
+offset_left = -125.0
+offset_top = -1.0
+offset_right = -5.0
+offset_bottom = 25.0
 grow_horizontal = 0
 vertical_alignment = 1
 
 [node name="EpicImages" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(518, 27)
+position = Vector2(3, 3)
 scale = Vector2(0.447, 0.447)
 texture = ExtResource("3_mrhd4")
 centered = false
 region_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EpicImages"]
-autoplay = "ikari"
 libraries = {
 "": SubResource("AnimationLibrary_ichqs")
 }
+autoplay = "ikari"

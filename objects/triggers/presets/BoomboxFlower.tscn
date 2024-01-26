@@ -1,0 +1,152 @@
+[gd_scene load_steps=10 format=3 uid="uid://byc04x2ffagfp"]
+
+[ext_resource type="Texture2D" uid="uid://cuhva4lvobgu5" path="res://images/enemies/boomflower.png" id="1_m0pll"]
+[ext_resource type="Script" path="res://objects/triggers/MapCaller.gd" id="2_34udg"]
+[ext_resource type="Script" path="res://objects/triggers/presets/BoomboxFlower.gd" id="2_qpwku"]
+
+[sub_resource type="Animation" id="Animation_dckee"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(30, 43, 30, 43), Rect2(60, 43, 30, 43)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3.5, 0.5), Vector2(-3.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_bit0n"]
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 30, 43), Rect2(0, 0, 30, 43), Rect2(30, 0, 30, 43), Rect2(30, 0, 30, 43), Rect2(60, 0, 30, 43), Rect2(90, 0, 30, 43), Rect2(0, 43, 30, 43)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-3.5, 0.5), Vector2(-3.5, 0.5), Vector2(-3.5, 0.5), Vector2(-3.5, 0.5), Vector2(-3.5, 0.5), Vector2(-3.5, 0.5), Vector2(-3.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_06gsy"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(90, 43, 30, 43), Rect2(0, 86, 30, 43)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3.5, 0.5), Vector2(-3.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_dkp24"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(30, 86, 30, 43)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3.5, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wpkvw"]
+_data = {
+"hey!": SubResource("Animation_dckee"),
+"idle": SubResource("Animation_bit0n"),
+"oh": SubResource("Animation_06gsy"),
+"stare": SubResource("Animation_dkp24")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bugto"]
+size = Vector2(15, 251)
+
+[node name="BoomboxFlower" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_m0pll")
+offset = Vector2(-3.5, 0.5)
+region_enabled = true
+region_rect = Rect2(0, 0, 30, 43)
+script = ExtResource("2_qpwku")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wpkvw")
+}
+autoplay = "idle"
+
+[node name="MapCaller" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("2_34udg")
+call_name = "trip"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapCaller"]
+position = Vector2(-53.5, -103.5)
+shape = SubResource("RectangleShape2D_bugto")
+debug_color = Color(1, 0, 0, 0)
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
