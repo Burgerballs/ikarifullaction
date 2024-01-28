@@ -1,12 +1,12 @@
-Lolly
+Lilly
 She/Her
 Species: Long-eared Cat (after printer-related injury) Cat (before printer-related injury)
 
-Lolly is a retired store clerk who left her job for unknown reasons. She is extremely charismatic and easy-going. 
+Lilly is a retired store clerk who left her job for unknown reasons. She is extremely charismatic and easy-going. 
 She believes in justice against pure evil, and views herself as the one to do it.
 
-Despite Lolly attempting to come off as a cabbit, 
-Lolly is actually a cat, with disproportionately long ears after an injury relating to her ears getting stuck in a printer roller, 
+Despite Lilly attempting to come off as a cabbit, 
+Lilly is actually a cat, with disproportionately long ears after an injury relating to her ears getting stuck in a printer roller, 
 after the injury she was granted extreme speed and can hear things clearly from miles away, 
 she actively tries to avoid conversations about cabbits because she isn't one, 
 but is okay with talking with real ones if they aren't so picky about how she looks. 

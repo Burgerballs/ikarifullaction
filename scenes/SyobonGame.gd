@@ -25,4 +25,4 @@ func kill():
 	tim.autostart = false
 	tim.connect('timeout', func():
 		Globals.enter_level(Globals.currentLevel))
-	tim.start(2.15)
+	tim.start(3)
