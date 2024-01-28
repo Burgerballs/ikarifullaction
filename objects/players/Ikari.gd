@@ -12,6 +12,7 @@ var airSuspension = false
 var skidTimer = 0
 var hitwallTimer = 0
 var tripState = false
+var dead = false
 var hitwall:
 	get:
 		return hitwallTimer > 0
@@ -32,55 +33,61 @@ var crouching:
 var prevFlipped # Stores the flipped value of the previous frame
 func _physics_process(delta):
 	super._physics_process(delta)
-	skidTimer -= delta*1000
-	hitwallTimer -= delta *1000
-	sprite.position.x = 9 if flipped && !tripState else -1
-	if tripState or hitwall:
-		flipped = prevFlipped
-		sprite.flip_h = flipped
-	# moving left and right code
-	dashMod = 1.4 if Input.is_action_pressed('dash') else 1
-	if prevFlipped != flipped && !jumping && !isGroundPound && is_on_floor() && !crouching && abs(movingRate) > 50: skidTimer = 172 # 6fps
-	if isMoving && !tripState && !hitwall:
-		movingRate = Globals.bound(velocity.x + ((speed*(delta*100)*directionVal) * (friction*4) * dashMod), -speedMaximal * dashMod, speedMaximal * dashMod)
-	elif tripState:
-		movingRate = 570 * (-1 if flipped else 1)
+	if (!dead):
+		skidTimer -= delta*1000
+		hitwallTimer -= delta *1000
+		sprite.position.x = 9 if flipped && !tripState else -1
+		if tripState or hitwall:
+			flipped = prevFlipped
+			sprite.flip_h = flipped
+		# moving left and right code
+		dashMod = 1.4 if Input.is_action_pressed('dash') else 1
+		if prevFlipped != flipped && !jumping && !isGroundPound && is_on_floor() && !crouching && abs(movingRate) > 50: skidTimer = 172 # 6fps
+		if isMoving && !tripState && !hitwall:
+			movingRate = Globals.bound(velocity.x + ((speed*(delta*100)*directionVal) * (friction*4) * dashMod), -speedMaximal * dashMod, speedMaximal * dashMod)
+		elif tripState:
+			movingRate = 570 * (-1 if flipped else 1)
+		else:
+			movingRate /= (friction/1.5)
+		if is_on_floor():
+			if crouching:
+				movingRate = 0
+			if jumping:
+				jumping = false
+			if isGroundPound:
+				isGroundPound = false
+			if velocity.y == 0:
+				jumpMode = false
+		if is_on_wall():
+			if tripState:
+				tripState = false
+				hitwallTimer = 667
+				movingRate = 760 * -(-1 if flipped else 1)
+				velocity.y -= 230
+				animPlayer.play('wallhit')
+		anim_handling()
+		jump_handling()
+		grund_pund()
+		if is_on_wall(): # move player over
+			if hitwall:
+				position.x -= hitboxShapeSize.x * (-1 if flipped else 1) / 4
+		velocity.x = snapped(movingRate, 1) * modifier * suspensionMult
+		gravity.y = (7 if Input.is_action_pressed('jump') && jumpMode else 10) * suspensionMult
+		prevFlipped = flipped
 	else:
-		movingRate /= (friction/1.5)
-	if is_on_floor():
-		if crouching:
-			movingRate = 0
-		if jumping:
-			jumping = false
-		if isGroundPound:
-			isGroundPound = false
-		if velocity.y == 0:
-			jumpMode = false
-	if is_on_wall():
-		if tripState:
-			tripState = false
-			hitwallTimer = 667
-			movingRate = 760 * -(-1 if flipped else 1)
-			velocity.y -= 230
-			animPlayer.play('wallhit')
-	anim_handling()
-	jump_handling()
-	grund_pund()
-	if is_on_wall(): # move player over
-		if hitwall:
-			position.x -= hitboxShapeSize.x * (-1 if flipped else 1) / 4
-	velocity.x = snapped(movingRate, 1) * modifier * suspensionMult
-	gravity.y = (7 if Input.is_action_pressed('jump') && jumpMode else 10) * suspensionMult
-	prevFlipped = flipped
+		sprite.flip_h = false
 
 func jump_handling():
 	if Input.is_action_just_pressed('jump') && is_on_floor():
-		var jumpMult = 1 if !crouching else 0.6
-		velocity.y -= (430 * (abs((movingRate/speedMaximal)/15) + 1))*jumpMult
-		jumpMode = true
-		jumping = true
-		if !tripState:
-			animPlayer.play('jumpstart')
+		jump()
+func jump():
+	var jumpMult = 1 if !crouching else 0.6
+	velocity.y = 0
+	velocity.y -= (430 * (abs((movingRate/speedMaximal)/15) + 1))*jumpMult
+	jumpMode = true
+	jumping = true
+	if !tripState:
+		animPlayer.play('jumpstart')
 func grund_pund():
 	if Input.is_action_just_pressed('down') && !is_on_floor() && !isGroundPound && !tripState:
 		isGroundPound = true
@@ -124,3 +131,19 @@ func trip():
 	tripState = true
 	velocity.y -= 230 if velocity.y == 0 else 0
 	animPlayer.play('trip')
+func kill():
+	dead = true
+	enablePhysics = false
+	animPlayer.play('death')
+	collision_layer = 1
+	collision_mask = 1
+	var tim = Timer.new()
+	add_child(tim)
+	tim.autostart = false
+	tim.connect('timeout', func():
+		enablePhysics = true
+		velocity.x = 0
+		velocity.y = -500
+		Globals.play_music(load('res://audio/bgm/BGM_die.ogg'))
+		tim.stop())
+	tim.start(1)

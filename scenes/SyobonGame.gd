@@ -16,3 +16,13 @@ func _ready():
 func _physics_process(delta):
 	playerCam.position.x = playerChar.position.x if !lockCameraX else lockPos.x
 	playerCam.position.y = playerChar.position.y if !lockCameraY else lockPos.y
+func kill():
+	Globals.play_sound('die')
+	Globals.music.stop()
+	playerChar.kill()
+	var tim = Timer.new()
+	add_child(tim)
+	tim.autostart = false
+	tim.connect('timeout', func():
+		Globals.enter_level(Globals.currentLevel))
+	tim.start(2.15)

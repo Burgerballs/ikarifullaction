@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx0ljn4lktuv3"]
+
+[sub_resource type="Gradient" id="Gradient_dijbe"]
+offsets = PackedFloat32Array(0.00932836, 0.998134)
+colors = PackedColorArray(1, 0.67451, 0.435294, 1, 0.615686, 0.2, 0, 0)
+
+[node name="Splodie" type="CPUParticles2D"]
+emitting = false
+amount = 100
+lifetime = 0.4
+one_shot = true
+fixed_fps = 120
+draw_order = 1
+direction = Vector2(4, 4)
+spread = 180.0
+gravity = Vector2(30, 980)
+initial_velocity_min = 23.97
+initial_velocity_max = 380.14
+linear_accel_min = -28.08
+linear_accel_max = 33.56
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_dijbe")

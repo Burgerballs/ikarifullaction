@@ -1,36 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://deps3ospdu8qn"]
+[gd_scene load_steps=9 format=3 uid="uid://deps3ospdu8qn"]
 
 [ext_resource type="Script" path="res://objects/enemies/Raddish.gd" id="1_umnp4"]
-[ext_resource type="Texture2D" uid="uid://db58qvq5notyp" path="res://images/enemies/raddish.png" id="2_gfc4f"]
+[ext_resource type="Texture2D" uid="uid://cn78ipndinkw1" path="res://images/enemies/newraddish.png" id="2_4oel3"]
 
-[sub_resource type="Animation" id="Animation_0uymn"]
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:region_rect")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Rect2(60, 0, 60, 72), Rect2(120, 0, 60, 72), Rect2(180, 0, 60, 72)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:offset")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_4erkg"]
+[sub_resource type="Animation" id="Animation_fgth8"]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -42,7 +15,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Rect2(0, 0, 60, 72)]
+"values": [Rect2(0, 0, 32, 30)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -57,35 +30,106 @@ tracks/1/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dekvr"]
+[sub_resource type="Animation" id="Animation_q7onk"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 30), Rect2(32, 0, 32, 30), Rect2(64, 0, 32, 30), Rect2(0, 30, 32, 30), Rect2(32, 30, 32, 30), Rect2(64, 30, 32, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r4m2k"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 60, 32, 30), Rect2(32, 60, 32, 30), Rect2(64, 60, 32, 30)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3g23"]
 _data = {
-"bite": SubResource("Animation_0uymn"),
-"idle": SubResource("Animation_4erkg")
+"bite": SubResource("Animation_r4m2k"),
+"idle": SubResource("Animation_fgth8"),
+"spin": SubResource("Animation_q7onk")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdhqi"]
-size = Vector2(26, 21)
+size = Vector2(28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a48jo"]
+size = Vector2(18, 22)
 
 [node name="Raddish" type="CharacterBody2D" groups=["enemy"]]
 texture_filter = 1
 texture_repeat = 1
-collision_layer = 38
-collision_mask = 38
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_umnp4")
 
-[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture_repeat = 1
-texture = ExtResource("2_gfc4f")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-16, -15)
+texture = ExtResource("2_4oel3")
 region_enabled = true
-region_rect = Rect2(0, 0, 60, 72)
+region_rect = Rect2(64, 30, 32, 30)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
-"": SubResource("AnimationLibrary_dekvr")
+"": SubResource("AnimationLibrary_n3g23")
 }
+autoplay = "spin"
 
 [node name="collidingShape" type="CollisionShape2D" parent="."]
-position = Vector2(-15, -10.5)
+position = Vector2(-16, -12)
 shape = SubResource("RectangleShape2D_vdhqi")
 one_way_collision_margin = 76.3
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="raddibox" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-16, -11)
+shape = SubResource("RectangleShape2D_a48jo")
+debug_color = Color(1, 0, 0, 0.482353)
+
+[connection signal="_on_hit_wall" from="." to="." method="_on__on_hit_wall"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

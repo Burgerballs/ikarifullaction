@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx6vjwq15i4xn"]
+[gd_scene load_steps=6 format=3 uid="uid://bx6vjwq15i4xn"]
 
 [ext_resource type="Script" path="res://maps/BaseMap.gd" id="1_xqri5"]
 [ext_resource type="AudioStream" uid="uid://bafkgfyss48wo" path="res://audio/bgm/BGM_jungle.ogg" id="2_vgmbp"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="3_dwya0"]
 [ext_resource type="PackedScene" uid="uid://byc04x2ffagfp" path="res://objects/triggers/presets/BoomboxFlower.tscn" id="4_o5rxm"]
+[ext_resource type="PackedScene" uid="uid://deps3ospdu8qn" path="res://objects/enemies/Raddish.tscn" id="5_fnjf3"]
 
 [node name="Enemytest" type="Node2D"]
 script = ExtResource("1_xqri5")
@@ -21,3 +22,6 @@ position = Vector2(11, 332)
 
 [node name="BoomboxFlower" parent="." instance=ExtResource("4_o5rxm")]
 position = Vector2(500, 368)
+
+[node name="Raddish" parent="." instance=ExtResource("5_fnjf3")]
+position = Vector2(337, 384)
