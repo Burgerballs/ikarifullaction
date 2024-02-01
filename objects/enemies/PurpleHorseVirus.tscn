@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://iwvxo3tdxgfs"]
+
+[ext_resource type="Script" path="res://objects/enemies/PurpleHorseVirus.gd" id="1_0yyn4"]
+[ext_resource type="Texture2D" uid="uid://b2ep8gwfkmisr" path="res://images/enemies/itsbeensolong.png" id="1_4iren"]
+
+[node name="PurpleHorseVirus" type="CharacterBody2D"]
+texture_filter = 1
+texture_repeat = 1
+script = ExtResource("1_0yyn4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_4iren")

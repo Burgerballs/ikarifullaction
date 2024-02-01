@@ -109,7 +109,7 @@ script = ExtResource("1_umnp4")
 position = Vector2(-16, -15)
 texture = ExtResource("2_4oel3")
 region_enabled = true
-region_rect = Rect2(64, 30, 32, 30)
+region_rect = Rect2(0, 60, 32, 30)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
