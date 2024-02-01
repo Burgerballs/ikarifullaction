@@ -44,7 +44,7 @@ layout_mode = 0
 offset_right = 570.0
 offset_bottom = 30.0
 theme_override_fonts/font = ExtResource("1_2x8fg")
-placeholder_text = "Enter \"Globals.help()\" for commands!"
+placeholder_text = "Enter \"help\" for commands!"
 
 [node name="Label" type="Label" parent="."]
 offset_right = 640.0

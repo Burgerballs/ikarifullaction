@@ -16,7 +16,8 @@ func _ready():
 		'Ikari',
 		'Lilly',
 		'no syobon jr doesnt get one he suxx',
-		'squiddy would kill me otherwise'
+		'squiddy would kill me otherwise',
+		'𝓹𝓾𝓻𝓹𝓵𝓮'
 	]
 	verLabel.text+= ' '+randomText.pick_random() + ' Edition'
 func _process(delta):
