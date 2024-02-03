@@ -5,6 +5,7 @@ var friction = 2
 var maximal
 var speedMaximal = 300
 var movingRate = 0
+var coyoteTimer = 0 # fuck yeah!!
 var holdGravMod = 1 # for when you hold the jump button, should make the jump a little more floaty!
 var modifier = 1
 var dashMod = 1
@@ -31,11 +32,14 @@ var crouching:
 	get:
 		return Input.is_action_pressed('down') && !isGroundPound
 var prevFlipped # Stores the flipped value of the previous frame
+
+var prevOnGround = false # we are getting really fucky with variables so why not
 func _physics_process(delta):
 	super._physics_process(delta)
 	if (!dead):
 		skidTimer -= delta*1000
 		hitwallTimer -= delta *1000
+		coyoteTimer -= delta *1000
 		sprite.position.x = 9 if flipped && !tripState else -1
 		if tripState or hitwall:
 			flipped = prevFlipped
@@ -66,20 +70,21 @@ func _physics_process(delta):
 				velocity.y -= 230
 				animPlayer.play('wallhit')
 		anim_handling()
-		jump_handling()
+		if Input.is_action_just_pressed('jump') && (is_on_floor() or coyoteTimer > 0):
+			jump()
 		grund_pund()
 		if is_on_wall(): # move player over
 			if hitwall:
 				position.x -= hitboxShapeSize.x * (-1 if flipped else 1) / 4
+		
 		velocity.x = snapped(movingRate, 1) * modifier * suspensionMult
 		gravity.y = (7 if Input.is_action_pressed('jump') && jumpMode else 10) * suspensionMult
 		prevFlipped = flipped
+		if prevOnGround && !is_on_floor():
+			coyoteTimer = 100 # 0.1 seconds!
+		prevOnGround = is_on_floor()
 	else:
 		sprite.flip_h = false
-
-func jump_handling():
-	if Input.is_action_just_pressed('jump') && is_on_floor():
-		jump()
 func jump():
 	var jumpMult = 1 if !crouching else 0.6
 	velocity.y = 0
