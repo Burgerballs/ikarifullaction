@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cqls1j8expggt" path="res://maps/BGs/hills.tscn" id="3_rhyh4"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="4_kou4m"]
 [ext_resource type="PackedScene" uid="uid://deps3ospdu8qn" path="res://objects/enemies/Raddish.tscn" id="5_sisvv"]
-[ext_resource type="PackedScene" uid="uid://iwvxo3tdxgfs" path="res://objects/enemies/PurpleHorseVirus.tscn" id="6_5adpi"]
+[ext_resource type="PackedScene" path="res://objects/enemies/PurpleHorseVirus.tscn" id="6_5adpi"]
 
 [node name="TestMap" type="Node2D"]
 texture_filter = 1

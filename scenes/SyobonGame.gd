@@ -7,7 +7,7 @@ var lockCameraX = false
 var lockCameraY = false
 var lockPos = Vector2(7,-87)
 func _ready():
-	map = load("res://maps/"+Globals.currentLevel+".tscn").instantiate()
+	map = Globals.levelCached.instantiate()
 	var playerPos = map.find_child('PlayerSpawn').position
 	add_child(map)
 	playerChar = load('res://objects/players/' +player+ '.tscn').instantiate()

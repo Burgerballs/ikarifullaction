@@ -72,6 +72,7 @@ func _physics_process(delta):
 		anim_handling()
 		if Input.is_action_just_pressed('jump') && (is_on_floor() or coyoteTimer > 0):
 			jump()
+			Globals.play_sound('jump', 1 if is_on_floor() && !crouching else 1.05 if coyoteTimer > 0 else 1.2)
 		grund_pund()
 		if is_on_wall(): # move player over
 			if hitwall:
@@ -80,8 +81,8 @@ func _physics_process(delta):
 		velocity.x = snapped(movingRate, 1) * modifier * suspensionMult
 		gravity.y = (7 if Input.is_action_pressed('jump') && jumpMode else 10) * suspensionMult
 		prevFlipped = flipped
-		if prevOnGround && !is_on_floor():
-			coyoteTimer = 100 # 0.1 seconds!
+		if prevOnGround && !is_on_floor() && !jumping:
+			coyoteTimer = 132 # 0.132 seconds!
 		prevOnGround = is_on_floor()
 	else:
 		sprite.flip_h = false

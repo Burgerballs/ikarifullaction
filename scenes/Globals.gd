@@ -5,10 +5,10 @@ extends CanvasLayer
 @onready var music = $MUSIC
 var diffPhysicsProc:
 	get:
-		return Engine.physics_ticks_per_second / 120 
-var currentLevel = 'testicals/enemytest'
+		return Engine.physics_ticks_per_second / 120
+var levelCached:PackedScene = preload("res://maps/testicals/jumptest.tscn")
 func enter_level(level):
-	currentLevel = level
+	levelCached = load("res://maps/"+level+".tscn").instantiate()
 	get_tree().change_scene_to_file('res://scenes/SyobonGame.tscn')
 var prevDelta = 0
 var deltaCounter = 0
@@ -25,9 +25,15 @@ func _process(delta):
 		text.text += '\nELAPSED: ' + str(snappedf(deltaCounter, 0.01))
 		text.text += '\nMEM: ' + str(snappedf(OS.get_static_memory_usage()/1000000,0.1)) + 'MB'
 
-func play_sound(sfxx):
-	sfx.set_stream(load('res://audio/SE_'+sfxx+'.ogg'))
-	sfx.play()
+func play_sound(sfxx, custom_pitch: float = 1.0, start_time: float = 0.0, volume: float = 1.0):
+	var new_sound: AudioStreamPlayer = AudioStreamPlayer.new()
+	new_sound.volume_db = linear_to_db(volume)
+	new_sound.stream = load('res://audio/SE_'+sfxx+'.ogg')
+	new_sound.pitch_scale = custom_pitch
+	new_sound.finished.connect(new_sound.queue_free)
+	sfx.add_child(new_sound)
+	new_sound.play(start_time)
+
 func play_music(stream,position = 0):
 	music.stream = stream
 	music.play(position)
