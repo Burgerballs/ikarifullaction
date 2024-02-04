@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bftaavntst2sl"]
+[gd_scene load_steps=17 format=3 uid="uid://bftaavntst2sl"]
 
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="1_emeoe"]
 [ext_resource type="Shader" path="res://scenes/EnterLevel.gdshader" id="1_k6oom"]
@@ -39,20 +39,41 @@ shader_parameter/topright = Vector2(2.08165e-12, 2)
 shader_parameter/bottomleft = Vector2(3, 1)
 shader_parameter/bottomright = Vector2(2.08165e-12, 4)
 
+[sub_resource type="Gradient" id="Gradient_33aki"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q12xb"]
+gradient = SubResource("Gradient_33aki")
+height = 256
+fill_from = Vector2(1, 0)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_0rpbm"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ln34c"]
+gradient = SubResource("Gradient_0rpbm")
+height = 256
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_xdll3"]
+offsets = PackedFloat32Array(0, 0.367589, 0.517787, 0.620553, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.908397, 0, 0, 0, 1, 0, 0, 0, 0.927676, 0, 0, 0, 0.117647)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qx8np"]
+gradient = SubResource("Gradient_xdll3")
+height = 256
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bmgl"]
+bg_color = Color(0, 0, 0, 0)
+border_width_top = 1
+
 [sub_resource type="LabelSettings" id="LabelSettings_uttwd"]
 font = ExtResource("1_emeoe")
 font_size = 24
-
-[sub_resource type="Gradient" id="Gradient_a4gcx"]
-offsets = PackedFloat32Array(0, 0.391304, 0.70751, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_mxogh"]
-gradient = SubResource("Gradient_a4gcx")
-width = 64
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_1one3"]
-color = Color(0.568627, 0.0941176, 0.329412, 1)
 
 [node name="Node2D" type="Node2D"]
 texture_filter = 1
@@ -92,32 +113,49 @@ material = SubResource("ShaderMaterial_7jwic")
 offset_right = 640.0
 offset_bottom = 480.0
 
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(315, 45)
+scale = Vector2(11.7188, 0.351563)
+texture = SubResource("GradientTexture2D_q12xb")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(330, 435)
+scale = Vector2(11.7188, 0.351563)
+texture = SubResource("GradientTexture2D_ln34c")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(300, 240)
+scale = Vector2(14.2969, 1.17187)
+texture = SubResource("GradientTexture2D_qx8np")
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 390.0
+offset_right = 640.0
+offset_bottom = 480.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bmgl")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_left = 640.0
+offset_top = 90.0
+offset_right = 1280.0
+offset_bottom = 180.0
+rotation = 3.14159
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bmgl")
+
 [node name="Label" type="Label" parent="."]
 offset_right = 640.0
-offset_bottom = 29.0
+offset_bottom = 90.0
 text = "Level Name
-something something amount of lives"
+[IKARI HEAD]x -:3"
 label_settings = SubResource("LabelSettings_uttwd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
-offset_top = 450.0
+offset_top = 390.0
 offset_right = 640.0
-offset_bottom = 479.0
+offset_bottom = 480.0
 text = "PRESS ENTER!!!"
 label_settings = SubResource("LabelSettings_uttwd")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(320, 240)
-rotation = 1.5708
-scale = Vector2(5, 640)
-texture = SubResource("GradientTexture1D_mxogh")
-
-[node name="Panel" type="Panel" parent="."]
-offset_top = 284.0
-offset_right = 640.0
-offset_bottom = 480.0
-theme_override_styles/panel = SubResource("StyleBoxLine_1one3")
