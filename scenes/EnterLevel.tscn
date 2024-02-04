@@ -110,6 +110,7 @@ offset_bottom = 480.0
 
 [node name="ColorRect3" type="ColorRect" parent="ColorRect2"]
 material = SubResource("ShaderMaterial_7jwic")
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 480.0
 
