@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0nl3dhm8ywwv"]
+
+[sub_resource type="Gradient" id="Gradient_4pro1"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6r36h"]
+gradient = SubResource("Gradient_4pro1")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.05)
+
+[sub_resource type="Gradient" id="Gradient_paivp"]
+offsets = PackedFloat32Array(0, 0.983122)
+colors = PackedColorArray(0.180392, 0.180392, 0.180392, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_ntx0t"]
+offsets = PackedFloat32Array(0, 0.734177)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="funny" type="CPUParticles2D"]
+texture_filter = 1
+position = Vector2(2.08165e-12, 2.08165e-12)
+amount = 1000
+lifetime = 2.0
+draw_order = 1
+texture = SubResource("GradientTexture2D_6r36h")
+emission_shape = 3
+emission_rect_extents = Vector2(30, 30)
+direction = Vector2(10, 10)
+spread = 180.0
+gravity = Vector2(-8, 16)
+initial_velocity_max = 5.3
+orbit_velocity_max = 0.23
+scale_amount_min = 0.9
+scale_amount_max = 1.1
+split_scale = true
+scale_curve_x = null
+scale_curve_y = null
+color = Color(0.972549, 0, 0.215686, 1)
+color_ramp = SubResource("Gradient_paivp")
+color_initial_ramp = SubResource("Gradient_ntx0t")

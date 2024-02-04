@@ -103,6 +103,8 @@ texture_filter = 1
 texture_repeat = 1
 collision_layer = 4
 collision_mask = 4
+collision_priority = 5.0
+safe_margin = 0.01
 script = ExtResource("1_umnp4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -132,4 +134,5 @@ shape = SubResource("RectangleShape2D_a48jo")
 debug_color = Color(1, 0, 0, 0.482353)
 
 [connection signal="_on_hit_wall" from="." to="." method="_on__on_hit_wall"]
+[connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

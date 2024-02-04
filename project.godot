@@ -35,6 +35,10 @@ project/assembly_name="CatMarioClone"
 
 enabled=PackedStringArray("res://addons/aseprite_importer/plugin.cfg")
 
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+
 [input]
 
 fullscreen={
@@ -55,8 +59,8 @@ fullscreen={
 
 [physics]
 
-common/physics_ticks_per_second=480
-common/max_physics_steps_per_frame=16
+common/physics_ticks_per_second=120
+common/max_physics_steps_per_frame=4
 
 [rendering]
 

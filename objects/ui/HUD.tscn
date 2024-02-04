@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cddhlft02vklm"]
+[gd_scene load_steps=8 format=3 uid="uid://cddhlft02vklm"]
 
 [ext_resource type="PackedScene" uid="uid://c0fcoecnia2gk" path="res://objects/ui/HUD/CoinCounter.tscn" id="1_m7rsb"]
+[ext_resource type="Script" path="res://objects/ui/HUD.gd" id="1_sne3c"]
 [ext_resource type="PackedScene" uid="uid://bvtcjnox70rs7" path="res://objects/ui/HUD/Score.tscn" id="2_yvx3a"]
 [ext_resource type="Texture2D" uid="uid://gy4lkcb76gsm" path="res://objects/ui/HUD/epic images.png" id="3_mrhd4"]
 
@@ -41,6 +42,7 @@ _data = {
 }
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_sne3c")
 
 [node name="CoinCounter" parent="." instance=ExtResource("1_m7rsb")]
 offset_left = 594.0
@@ -57,6 +59,7 @@ offset_top = -1.0
 offset_right = -5.0
 offset_bottom = 25.0
 grow_horizontal = 0
+text = "Score: 0"
 vertical_alignment = 1
 
 [node name="EpicImages" type="Sprite2D" parent="."]

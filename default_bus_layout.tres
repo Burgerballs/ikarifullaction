@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://c3pevwq8b62y"]
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://c3pevwq8b62y"]
 
 [sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_tpswu"]
 resource_name = "Compressor"
@@ -11,6 +11,16 @@ resource_name = "EQ"
 band_db/32_hz = 5.0
 band_db/100_hz = 3.3
 band_db/10000_hz = -1.7
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_t4mqa"]
+resource_name = "Delay"
+tap1_delay_ms = 150.0
+tap1_pan = 0.4
+tap2_delay_ms = 400.0
+feedback_delay_ms = 400.0
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_n8532"]
+resource_name = "Compressor"
 
 [resource]
 bus/1/name = &"SFX"
@@ -29,3 +39,13 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
+bus/3/name = &"reverberate"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectDelay_t4mqa")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectCompressor_n8532")
+bus/3/effect/1/enabled = true

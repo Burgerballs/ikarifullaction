@@ -1,16 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx0ljn4lktuv3"]
+[gd_scene load_steps=6 format=3 uid="uid://dx0ljn4lktuv3"]
 
-[sub_resource type="Gradient" id="Gradient_dijbe"]
-offsets = PackedFloat32Array(0.00932836, 0.998134)
-colors = PackedColorArray(1, 0.67451, 0.435294, 1, 0.615686, 0.2, 0, 0)
+[sub_resource type="Gradient" id="Gradient_chb25"]
+interpolation_mode = 2
+interpolation_color_space = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_unme6"]
+min_value = -1.0
+_data = [Vector2(0.00377358, -1), 0.0, 0.0, 0, 0, Vector2(0.49434, 0.0873636), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_de4fr"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.462882)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qmw0k"]
+gradient = SubResource("Gradient_de4fr")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="Curve" id="Curve_iwqof"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.475472, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Splodie" type="CPUParticles2D"]
-emitting = false
 amount = 100
-lifetime = 0.4
-one_shot = true
-fixed_fps = 120
+lifetime = 0.79
+explosiveness = 1.0
+fixed_fps = 30
+local_coords = true
 draw_order = 1
+emission_shape = 1
+emission_sphere_radius = 1.0
 direction = Vector2(4, 4)
 spread = 180.0
 gravity = Vector2(30, 980)
@@ -19,4 +42,20 @@ initial_velocity_max = 380.14
 linear_accel_min = -28.08
 linear_accel_max = 33.56
 scale_amount_max = 2.0
-color_ramp = SubResource("Gradient_dijbe")
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("Gradient_chb25")
+hue_variation_min = -1.0
+hue_variation_curve = SubResource("Curve_unme6")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 1
+texture_filter = 1
+amount = 1
+lifetime = 0.79
+explosiveness = 1.0
+fixed_fps = 30
+texture = SubResource("GradientTexture2D_qmw0k")
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+scale_amount_curve = SubResource("Curve_iwqof")
+hue_variation_min = -0.8
+hue_variation_max = 1.0
