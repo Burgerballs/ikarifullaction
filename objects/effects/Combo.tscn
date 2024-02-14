@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b7se7y3hht40b"]
+
+[node name="Combo" type="Label"]
+text = "Runny Kill +50"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 23.0
+offset_right = 106.0
+offset_bottom = 46.0
+text = "x1"
