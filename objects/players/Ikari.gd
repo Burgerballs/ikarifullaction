@@ -54,7 +54,7 @@ func _physics_process(delta):
 		else:
 			movingRate /= (friction/1.5)
 		if is_on_floor():
-			if crouching:
+			if crouching && !tripState:
 				movingRate = 0
 			if jumping:
 				jumping = false
@@ -114,7 +114,7 @@ func anim_handling():
 		animPlayer.play('turn')
 	elif !isGroundPound && !jumping && !tripState && !hitwall:
 		animPlayer.play('idle')
-	animatedHitbox.play("spin" if tripState else 'crouch' if crouching else 'RESET')
+	animatedHitbox.play("spin" if tripState && !crouching else 'crouch' if crouching && !tripState else 'RESET')
 
 
 func _on_animation_player_animation_finished(anim_name):
