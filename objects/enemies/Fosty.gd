@@ -1,16 +1,16 @@
-class_name Runny
+class_name Fosty
 extends Enemy
 @onready var spr = $Sprite2D
 @onready var animplayer = $Sprite2D/AnimationPlayer
 @onready var hbplayer = $collidingShape/AnimationPlayer
-var movingRate = 120
+var movingRate = 130 # slightly fastor cuz shooe!!
 @onready var game = $"../../"
 var dead
 @export var speed:float = -2.0 ## negative means left lol listen to my podcast
 var shellshocked = false # your eejfjfmfdjewdoefnkfkn mom
 var kicked = false
-var prevMovingRate = 120
-func _on__on_hit_wall():
+var prevMovingRate = 170
+func _on__on_hit_wall(d = true):
 	var glug = true
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
@@ -19,13 +19,17 @@ func _on__on_hit_wall():
 			glug = false
 			break
 	if glug: speed *= -1
-	if kicked && glug: Globals.play_sound('jumpBlock')
+	if kicked && glug && d: Globals.play_sound('jumpBlock')
 	
 func _physics_process(delta):
 	super._physics_process(delta)
 	velocity.x = movingRate*speed*(1 if !shellshocked else 0 if !kicked else 2)
 	spr.flip_h = !(velocity.x >= 1)
-
+	edging()
+func edging():
+	if (!$edger1.is_colliding() or !$edger2.is_colliding()) && !shellshocked:
+		position.x += 2 if !$edger1.is_colliding() else -2
+		_on__on_hit_wall(false)
 
 func _on_hurtbox_body_entered(body):
 	if body.is_in_group('players'):
@@ -51,6 +55,7 @@ func die(_d = null):
 		_d.jump()
 	Globals.splodey(position + Vector2(-16, -15))
 	dead = true
+	game.score += 500
 	queue_free()
 func shell(d):
 	d.jump()

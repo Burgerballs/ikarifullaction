@@ -1,0 +1,227 @@
+[gd_scene load_steps=12 format=3 uid="uid://dne2irtgxa1dn"]
+
+[ext_resource type="Script" path="res://objects/enemies/Fosty.gd" id="1_wy70l"]
+[ext_resource type="Texture2D" uid="uid://d4kxb1iqjge2" path="res://images/enemies/fosty.png" id="2_rsfhg"]
+
+[sub_resource type="Animation" id="Animation_1ly6s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-14, -26)]
+}
+
+[sub_resource type="Animation" id="Animation_vermv"]
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 55, 52), Rect2(55, 0, 55, 52), Rect2(0, 52, 55, 52)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-14, -26)]
+}
+
+[sub_resource type="Animation" id="Animation_4jxnb"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(55, 52, 55, 52)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-14, -42)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3g23"]
+_data = {
+"RESET": SubResource("Animation_1ly6s"),
+"running": SubResource("Animation_vermv"),
+"shell": SubResource("Animation_4jxnb")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdhqi"]
+size = Vector2(28, 43)
+
+[sub_resource type="Animation" id="Animation_wg4k7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-15, -21.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(28, 43)]
+}
+
+[sub_resource type="Animation" id="Animation_now8c"]
+resource_name = "shell"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-15, -29.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:shape:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(28, 27)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jdb6e"]
+_data = {
+"RESET": SubResource("Animation_wg4k7"),
+"shell": SubResource("Animation_now8c")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a48jo"]
+size = Vector2(18, 40)
+
+[node name="Raddish" type="CharacterBody2D" groups=["enemy"]]
+texture_filter = 1
+texture_repeat = 1
+collision_layer = 4
+collision_mask = 4
+safe_margin = 0.01
+script = ExtResource("1_wy70l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-14, -26)
+texture = ExtResource("2_rsfhg")
+region_enabled = true
+region_rect = Rect2(0, 0, 55, 52)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_n3g23")
+}
+autoplay = "running"
+
+[node name="collidingShape" type="CollisionShape2D" parent="."]
+position = Vector2(-15, -21.5)
+shape = SubResource("RectangleShape2D_vdhqi")
+one_way_collision_margin = 76.3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="collidingShape"]
+libraries = {
+"": SubResource("AnimationLibrary_jdb6e")
+}
+autoplay = "RESET"
+
+[node name="hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="raddibox" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(-15, -20)
+shape = SubResource("RectangleShape2D_a48jo")
+debug_color = Color(1, 0, 0, 0.482353)
+
+[node name="edger1" type="RayCast2D" parent="."]
+position = Vector2(-29, 4.16329e-12)
+target_position = Vector2(2.08165e-12, 5)
+collision_mask = 4
+hit_from_inside = true
+
+[node name="edger2" type="RayCast2D" parent="."]
+position = Vector2(-1, 2.08165e-12)
+target_position = Vector2(2.08165e-12, 5)
+collision_mask = 4
+hit_from_inside = true
+
+[connection signal="_on_hit_wall" from="." to="." method="_on__on_hit_wall"]
+[connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

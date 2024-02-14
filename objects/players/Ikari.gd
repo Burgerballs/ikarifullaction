@@ -40,7 +40,7 @@ func _physics_process(delta):
 		skidTimer -= delta*1000
 		hitwallTimer -= delta *1000
 		coyoteTimer -= delta *1000
-		sprite.position.x = 9 if flipped && !tripState else -1
+		sprite.position.x = 1 if flipped && !tripState else -1
 		if tripState or hitwall:
 			flipped = prevFlipped
 			sprite.flip_h = flipped

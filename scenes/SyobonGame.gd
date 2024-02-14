@@ -22,6 +22,10 @@ func _process(delta):
 	$HUD.update()
 func kill():
 	Globals.play_sound('die')
+	lockPos.x = playerChar.position.x if !lockCameraX else lockPos.x
+	lockPos.y = playerChar.position.y if !lockCameraY else lockPos.y
+	lockCameraX = true
+	lockCameraY = true
 	Globals.music.stop()
 	playerChar.kill()
 	var tim = Timer.new()
