@@ -54,4 +54,4 @@ func _on_animation_player_animation_finished(anim_name):
 			var transed = load("res://objects/enemies/Runny.tscn").instantiate()
 			$"../".add_child(transed)
 			transed.position = position
-			die()
+			die() # accept your new identity
