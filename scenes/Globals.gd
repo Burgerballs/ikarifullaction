@@ -6,7 +6,7 @@ extends CanvasLayer
 var diffPhysicsProc:
 	get:
 		return Engine.physics_ticks_per_second / 120
-var levelCached:PackedScene = preload("res://maps/testicals/enemytest.tscn")
+var levelCached:PackedScene = preload("res://maps/world_1/tutorial.tscn")
 func enter_level(level):
 	levelCached = load("res://maps/"+level+".tscn").instantiate()
 	get_tree().change_scene_to_file('res://scenes/SyobonGame.tscn')

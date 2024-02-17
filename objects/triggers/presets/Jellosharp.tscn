@@ -1,0 +1,274 @@
+[gd_scene load_steps=17 format=3 uid="uid://bm7s41plxixei"]
+
+[ext_resource type="Texture2D" uid="uid://biqte76m53gq" path="res://images/BGs/jellosharp.png" id="1_h0bq3"]
+[ext_resource type="Script" path="res://objects/triggers/presets/Jellosharp.gd" id="2_adl5p"]
+[ext_resource type="Script" path="res://objects/triggers/MapCaller.gd" id="3_yt1o5"]
+[ext_resource type="Texture2D" uid="uid://viuliucssju7" path="res://images/props/jellobox.png" id="4_jsc1h"]
+[ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="5_tfoxu"]
+
+[sub_resource type="Animation" id="Animation_jgf16"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 90, 76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kpqlc"]
+length = 2.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 90, 76), Rect2(0, 0, 90, 76), Rect2(90, 0, 90, 76), Rect2(180, 0, 90, 76), Rect2(180, 0, 90, 76), Rect2(180, 0, 90, 76), Rect2(180, 0, 90, 76), Rect2(270, 0, 90, 76), Rect2(360, 0, 90, 76), Rect2(360, 0, 90, 76), Rect2(360, 0, 90, 76), Rect2(360, 0, 90, 76), Rect2(360, 0, 90, 76), Rect2(0, 76, 90, 76), Rect2(90, 76, 90, 76), Rect2(90, 76, 90, 76), Rect2(90, 76, 90, 76), Rect2(90, 76, 90, 76), Rect2(90, 76, 90, 76), Rect2(90, 76, 90, 76), Rect2(180, 76, 90, 76), Rect2(270, 76, 90, 76), Rect2(360, 76, 90, 76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xr3ji"]
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 152, 90, 76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rmewv"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(90, 152, 90, 76), Rect2(180, 152, 90, 76), Rect2(270, 152, 90, 76), Rect2(360, 152, 90, 76), Rect2(0, 152, 90, 76), Rect2(0, 228, 90, 76), Rect2(90, 228, 90, 76), Rect2(180, 228, 90, 76), Rect2(270, 228, 90, 76), Rect2(0, 152, 90, 76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wpkvw"]
+_data = {
+"dance": SubResource("Animation_rmewv"),
+"hecomes": SubResource("Animation_kpqlc"),
+"standing": SubResource("Animation_xr3ji"),
+"where": SubResource("Animation_jgf16")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hjhwu"]
+radius = 100.0
+
+[sub_resource type="Animation" id="Animation_q8fwa"]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 215, 152), Rect2(215, 0, 215, 152), Rect2(430, 0, 215, 152), Rect2(0, 152, 215, 152)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6omkm"]
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 152, 215, 152), Rect2(0, 152, 215, 152), Rect2(0, 152, 215, 152), Rect2(0, 152, 215, 152), Rect2(215, 152, 215, 152), Rect2(215, 152, 215, 152), Rect2(215, 152, 215, 152), Rect2(215, 152, 215, 152), Rect2(430, 152, 215, 152), Rect2(430, 152, 215, 152), Rect2(430, 152, 215, 152), Rect2(430, 152, 215, 152)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ql3sw"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 304, 215, 152), Rect2(215, 304, 215, 152), Rect2(430, 304, 215, 152)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ew8h4"]
+_data = {
+"close": SubResource("Animation_ql3sw"),
+"open": SubResource("Animation_q8fwa"),
+"speaking": SubResource("Animation_6omkm")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_l1pa8"]
+font = ExtResource("5_tfoxu")
+font_size = 10
+
+[node name="Jellosharp" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(-45, -38)
+texture = ExtResource("1_h0bq3")
+region_enabled = true
+region_rect = Rect2(0, 152, 90, 76)
+script = ExtResource("2_adl5p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wpkvw")
+}
+autoplay = "where"
+
+[node name="MapCaller" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("3_yt1o5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapCaller"]
+shape = SubResource("CircleShape2D_hjhwu")
+debug_color = Color(1, 0, 0, 0)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 13.5)
+scale = Vector2(4.7, 2.45)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-99, -96)
+texture = ExtResource("4_jsc1h")
+region_enabled = true
+region_rect = Rect2(430, 152, 215, 152)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ew8h4")
+}
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -54.0
+offset_top = -54.0
+offset_right = 84.0
+offset_bottom = 55.0
+text = "Press Z or the Spacebar to Jump! Tap with the elegance of a ballerina to make a small hop, or hold with the strength of a firm stomp to challenge the rules of gravity!"
+label_settings = SubResource("LabelSettings_l1pa8")
+autowrap_mode = 2
+visible_characters_behavior = 3
+visible_ratio = -0.00598802
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="MapCaller" to="." method="_on_map_caller_body_entered"]
+[connection signal="body_exited" from="MapCaller" to="." method="_on_map_caller_body_exited"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

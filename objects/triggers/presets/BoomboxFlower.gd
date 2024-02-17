@@ -9,11 +9,3 @@ func on_trigger(a,b):
 		'trip':
 			animPlayer.play("hey!")
 			game.playerChar.trip()
-
-
-func _on_animation_player_animation_finished(anim_name):
-	match anim_name:
-		'hey!':
-			animPlayer.play('oh')
-		'oh':
-			animPlayer.play("stare")
