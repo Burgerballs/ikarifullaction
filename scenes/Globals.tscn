@@ -13,6 +13,7 @@ font = ExtResource("2_ogbot")
 font_size = 8
 
 [node name="DebugOverlay" type="CanvasLayer"]
+process_mode = 3
 layer = 99
 script = ExtResource("1_ro1it")
 

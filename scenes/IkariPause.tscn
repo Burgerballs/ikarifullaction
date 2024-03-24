@@ -1,65 +1,161 @@
-[gd_scene load_steps=5 format=3 uid="uid://uhxs203ibu8o"]
+[gd_scene load_steps=17 format=3 uid="uid://uhxs203ibu8o"]
 
+[ext_resource type="Shader" path="res://scenes/InvertBehind.gdshader" id="1_c7ver"]
+[ext_resource type="Script" path="res://scenes/IkariPause.gd" id="1_pmbp2"]
+[ext_resource type="Shader" path="res://scenes/SyobonTitle.gdshader" id="1_rat7e"]
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="1_ur63m"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg6nn"]
-bg_color = Color(0, 0, 0, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
-corner_detail = 5
-anti_aliasing = false
-anti_aliasing_size = 10.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_focfq"]
+shader = ExtResource("1_c7ver")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_06tmx"]
+shader = ExtResource("1_rat7e")
+shader_parameter/WAVE_NUMBER = 0.75
+shader_parameter/WAVE_FREQUENCY = 0.3
+shader_parameter/WAVE_AMPLITUDE = 0.3
+
+[sub_resource type="Gradient" id="Gradient_0a3j0"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.0239234, 0.516746, 0.521531)
+colors = PackedColorArray(1, 0.498039, 0.152941, 1, 1, 0.854902, 0.756863, 1, 1, 0.854902, 0.756863, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uu2fa"]
+gradient = SubResource("Gradient_0a3j0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4shma"]
+texture = SubResource("GradientTexture1D_uu2fa")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ggyu"]
+content_margin_left = 8.0
+bg_color = Color(0.415686, 0.576471, 1, 1)
+corner_radius_top_right = 64
+corner_detail = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_eqyqp"]
+font = ExtResource("1_ur63m")
+font_size = 8
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_16h8d"]
 font = ExtResource("1_ur63m")
-font_size = 28
+font_size = 8
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_grfue"]
+[sub_resource type="LabelSettings" id="LabelSettings_s6c6j"]
 font = ExtResource("1_ur63m")
+font_size = 24
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_r4k3i"]
+resource_name = "enter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 0.329877),
+"update": 0,
+"values": [Vector2(-510, 0), Vector2(2.08165e-12, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_wutb4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-510, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bm7b7"]
+_data = {
+"RESET": SubResource("Animation_wutb4"),
+"enter": SubResource("Animation_r4k3i")
+}
 
 [node name="Node2D" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_pmbp2")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_focfq")
+offset_right = 660.0
+offset_bottom = 480.0
+
+[node name="Panel2" type="Panel" parent="."]
 texture_filter = 1
-offset_left = 150.0
-offset_top = 120.0
-offset_right = 510.0
-offset_bottom = 390.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_sg6nn")
+material = SubResource("ShaderMaterial_06tmx")
+offset_left = -510.0
+offset_right = 130.0
+offset_bottom = 480.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_4shma")
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_right = 360.0
+[node name="Label" type="Label" parent="Panel2"]
+texture_filter = 1
+offset_left = -30.0
+offset_top = 30.0
+offset_right = 210.0
 offset_bottom = 60.0
-text = "Paused!"
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ggyu")
+text = "THE PASSAGE OF TIME CONTINUES NO LONGER..."
+label_settings = SubResource("LabelSettings_eqyqp")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel2"]
+texture_filter = 1
+offset_top = 390.0
+offset_right = 480.0
+offset_bottom = 450.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ggyu")
+text = "Remember, if you exit or retry the level, Ikari forgets that she even played it! 
+In order for Ikari to remember, you must beat the level!"
 label_settings = SubResource("LabelSettings_16h8d")
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
+process_mode = 3
 layout_mode = 0
-offset_top = 180.0
+offset_left = -30.0
+offset_top = 120.0
 offset_right = 360.0
-offset_bottom = 270.0
-text = "Remember if you leave now Ikari will forget that she played this level! And no stats will be saved!"
-label_settings = SubResource("LabelSettings_grfue")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
+offset_bottom = 360.0
+theme_override_constants/separation = 90
 
-[node name="Label3" type="Label" parent="Panel"]
-layout_mode = 0
-offset_top = 90.0
-offset_right = 360.0
-offset_bottom = 180.0
-text = "[wait imagine if icons were here omg]"
-label_settings = SubResource("LabelSettings_grfue")
-horizontal_alignment = 1
+[node name="Label" type="Label" parent="Panel2/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(2.08165e-12, 60)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ggyu")
+text = "Resume"
+label_settings = SubResource("LabelSettings_s6c6j")
+horizontal_alignment = 2
 vertical_alignment = 1
-autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="Panel2/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(2.08165e-12, 60)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ggyu")
+text = "Exit Level"
+label_settings = SubResource("LabelSettings_s6c6j")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel2"]
+libraries = {
+"": SubResource("AnimationLibrary_bm7b7")
+}
+autoplay = "enter"

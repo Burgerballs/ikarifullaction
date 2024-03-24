@@ -18,6 +18,9 @@ func _ready():
 func _physics_process(delta):
 	playerCam.position.x = playerChar.position.x if !lockCameraX else lockPos.x
 	playerCam.position.y = playerChar.position.y if !lockCameraY else lockPos.y
+func _unhandled_key_input(event):
+	if Input.is_action_just_pressed('enter'):
+		add_child(load("res://scenes/IkariPause.tscn").instantiate())
 func _process(delta):
 	$HUD.update()
 func kill():

@@ -269,8 +269,9 @@ offset_bottom = 55.0
 text = "Press Z or the Spacebar to Jump! Tap with the elegance of a ballerina to make a small hop, or hold with the strength of a firm stomp to challenge the rules of gravity!"
 label_settings = SubResource("LabelSettings_l1pa8")
 autowrap_mode = 2
-visible_characters = 167
+visible_characters = 0
 visible_characters_behavior = 3
+visible_ratio = 0.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="MapCaller" to="." method="_on_map_caller_body_entered"]

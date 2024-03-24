@@ -19,11 +19,11 @@ interpolation_mode = 1
 offsets = PackedFloat32Array(0.0239234, 0.516746, 0.521531)
 colors = PackedColorArray(1, 0.498039, 0.152941, 1, 0.0862745, 0.117647, 0.2, 1, 1, 0.854902, 0.756863, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_uu2fa"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3bwwa"]
 gradient = SubResource("Gradient_epani")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1moo"]
-texture = SubResource("GradientTexture1D_uu2fa")
+texture = SubResource("GradientTexture1D_3bwwa")
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_brqj3"]
 input_name = "color"
@@ -79,7 +79,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-292.072, 478.24)
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(800, 280)

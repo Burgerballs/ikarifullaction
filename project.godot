@@ -18,7 +18,7 @@ config/description="Imagine enjoying a nice day as a (somewhat) happy lawyer, th
 config/version="1.0.0.0"
 run/main_scene="res://scenes/SyobonTitle.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://ikari.png"
 
 [autoload]
 

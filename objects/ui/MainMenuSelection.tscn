@@ -22,7 +22,6 @@ texture_filter = 1
 custom_minimum_size = Vector2(191, 191)
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_oq8gg")
-description = null
 
 [node name="img" type="Sprite2D" parent="."]
 texture = ExtResource("1_mapg8")
