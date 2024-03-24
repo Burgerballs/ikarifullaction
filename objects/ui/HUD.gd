@@ -4,4 +4,4 @@ var score:
 	get:
 		return get_parent().score
 func update():
-	$Score.text = 'Score: '+str(score)
+	$Score.text = 'Awesomeness Points: '+str(score)

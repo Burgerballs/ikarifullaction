@@ -1,0 +1,30 @@
+[gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://cijg40qwfhqly"]
+
+[ext_resource type="Script" path="res://addons/shaderV/uv/transformUV.gd" id="1_hwecc"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_32uif"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_jh52l"]
+default_input_values = [1, Vector3(0, 0, 0), 2, Vector3(1, 1, 0), 3, Vector3(0.5, 0.5, 0), 4, 0.0, 5, Vector3(0.5, 0.5, 0)]
+initialized = true
+script = ExtResource("1_hwecc")
+
+[sub_resource type="VisualShaderNodeColorFunc" id="VisualShaderNodeColorFunc_j34p8"]
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+
+
+"
+graph_offset = Vector2(-499.672, 162.447)
+mode = 1
+flags/light_only = false
+nodes/fragment/4/node = SubResource("VisualShaderNodeInput_32uif")
+nodes/fragment/4/position = Vector2(-360, 300)
+nodes/fragment/5/node = SubResource("VisualShaderNodeCustom_jh52l")
+nodes/fragment/5/position = Vector2(60, 220)
+nodes/fragment/6/node = SubResource("VisualShaderNodeColorFunc_j34p8")
+nodes/fragment/6/position = Vector2(300, 360)

@@ -46,7 +46,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 
 func _on_map_caller_body_entered(body):
-	if (body == game.playerChar):
+	if (body == game.get('playerChar')):
 		animPlayer.play('dance')
 		jellobox.visible = true
 		jelloboxAnim.play('open')
@@ -54,7 +54,7 @@ func _on_map_caller_body_entered(body):
 
 
 func _on_map_caller_body_exited(body):
-	if (body == game.playerChar):
+	if (body == game.get('playerChar')):
 		animPlayer.play('standing')
 		jelloboxAnim.play('close')
 		talkin = false

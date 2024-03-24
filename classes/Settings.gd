@@ -2,7 +2,7 @@ extends Node
 # A modified version of code by CrowPlexus!!
 var _cfg_file :ConfigFile
 var _defaults :Dictionary = {}
-const _CFG_PATH = "user://settings.cfg"
+const _CFG_PATH = "user://freakyfile.cfg"
 var game_scale = 2:
 	set(v): 
 		var window = get_window()
@@ -71,6 +71,7 @@ func save_settings() -> void:
 	for key in settings_keys:
 		if key.name.begins_with("_"): continue
 		_cfg_file.set_value("Settings", key.name, get(key.name))
+	
 
 	_cfg_file.save(_CFG_PATH)
 	print(FileAccess.file_exists(_CFG_PATH))

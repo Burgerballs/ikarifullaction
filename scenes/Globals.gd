@@ -22,8 +22,8 @@ func _process(delta):
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	if (floori(prevDelta*24) < floori(deltaCounter*24)):
 		text.text = 'FPS: ' + str(snappedf(1 / delta, 0.01))
-		text.text += '\nELAPSED: ' + str(snappedf(deltaCounter, 0.01))
-		text.text += '\nMEM: ' + str(snappedf(OS.get_static_memory_usage()/1000000,0.1)) + 'MB'
+		text.text += ' | ELAPSED: ' + str(snappedf(deltaCounter, 0.01))
+		text.text += ' | MEM: ' + str(snappedf(OS.get_static_memory_usage()/1000000,0.1)) + 'MB'
 
 func play_sound(sfxx, custom_pitch: float = 1.0, start_time: float = 0.0, volume: float = 1.0, bus_name:String = 'SFX'):
 	var new_sound: AudioStreamPlayer = AudioStreamPlayer.new()

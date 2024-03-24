@@ -11,6 +11,11 @@ config_version=5
 [application]
 
 config/name="Ikari // FULL ACTION"
+config/name_localized={
+"pr": "Ikarrrri // FULL ACTION"
+}
+config/description="Imagine enjoying a nice day as a (somewhat) happy lawyer, then all of a sudden you here a great thud that shakes the ground beneath ye, this is how the story of Ikari begins..."
+config/version="1.0.0.0"
 run/main_scene="res://scenes/SyobonTitle.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
@@ -34,7 +39,7 @@ project/assembly_name="CatMarioClone"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/aseprite_importer/plugin.cfg", "res://addons/discord-sdk-gd/plugin.cfg")
+enabled=PackedStringArray("res://addons/aseprite_importer/plugin.cfg")
 
 [gui]
 
