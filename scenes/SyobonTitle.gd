@@ -21,6 +21,7 @@ func _ready():
 	]
 	verLabel.text+= ' '+randomText.pick_random() + ' Edition'
 	changeSel(0)
+	Globals.play_music(load('res://audio/bgm/BGM_title.ogg'))
 func _process(delta):
 	squareShade.modulate.a = sin(Globals.deltaCounter*2)/6+0.3
 	squareShade.global_position = mainMenuElems[curSelected].global_position

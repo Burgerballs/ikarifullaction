@@ -1,13 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://do54pqrtruaor"]
+[gd_scene load_steps=14 format=3 uid="uid://do54pqrtruaor"]
 
 [ext_resource type="Script" path="res://maps/world_1/tutorial.gd" id="1_koq5r"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="2_3k4tb"]
 [ext_resource type="AudioStream" uid="uid://cug0adikyas2v" path="res://audio/bgm/BGM_clod_valley.ogg" id="2_rvd4o"]
-[ext_resource type="PackedScene" uid="uid://cqls1j8expggt" path="res://maps/BGs/hills.tscn" id="4_gvmbc"]
 [ext_resource type="PackedScene" uid="uid://bm7s41plxixei" path="res://objects/triggers/presets/Jellosharp.tscn" id="5_c4srg"]
 [ext_resource type="Script" path="res://objects/triggers/MapCaller.gd" id="6_3l4tr"]
 [ext_resource type="PackedScene" uid="uid://deps3ospdu8qn" path="res://objects/enemies/Raddish.tscn" id="7_fg7a7"]
 [ext_resource type="PackedScene" uid="uid://dtiqx0c46emyu" path="res://objects/enemies/Runny.tscn" id="8_1yjm3"]
+[ext_resource type="PackedScene" uid="uid://dd28e1na06yv0" path="res://objects/triggers/presets/Coin.tscn" id="9_g6vbf"]
+[ext_resource type="PackedScene" uid="uid://da32itsrva28p" path="res://objects/blocks/QMark.tscn" id="10_7uq1n"]
+[ext_resource type="PackedScene" uid="uid://dintyulihmw5r" path="res://maps/BGs/WavyLand.tscn" id="10_dfr6r"]
 
 [sub_resource type="Gradient" id="Gradient_4n0ko"]
 interpolation_color_space = 2
@@ -23,8 +25,8 @@ size = Vector2(90, 120)
 script = ExtResource("1_koq5r")
 bgm = ExtResource("2_rvd4o")
 
-[node name="hills" parent="." instance=ExtResource("4_gvmbc")]
-position = Vector2(-55, 69)
+[node name="WavyLand" parent="." instance=ExtResource("10_dfr6r")]
+position = Vector2(1350, 180)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -46,7 +48,7 @@ position = Vector2(-55, 300)
 
 [node name="Jellosharp" parent="." instance=ExtResource("5_c4srg")]
 position = Vector2(435, 322)
-text = "Hello Ikari! I am Jellenious Sharp, you may call me Jellosharp, in short! And I shall teach you the very basics of this crazy world!"
+text = "Hello Ikari! I am Jellenious Sharp, you may call me Jellosharp for short! And I shall teach you the very basics of this crazy world!"
 
 [node name="Jellosharp2" parent="." instance=ExtResource("5_c4srg")]
 position = Vector2(1185, 322)
@@ -126,3 +128,9 @@ position = Vector2(6899, 1338)
 
 [node name="Raddish" parent="." instance=ExtResource("8_1yjm3")]
 position = Vector2(6742, 1335)
+
+[node name="Coin" parent="." instance=ExtResource("9_g6vbf")]
+position = Vector2(782, 281)
+
+[node name="QMark" parent="." instance=ExtResource("10_7uq1n")]
+position = Vector2(1560, 120)

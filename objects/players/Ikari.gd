@@ -59,6 +59,7 @@ func _physics_process(delta):
 			if jumping:
 				jumping = false
 			if isGroundPound:
+				movingRate*=1.4
 				isGroundPound = false
 			if velocity.y == 0:
 				jumpMode = false
