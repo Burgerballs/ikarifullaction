@@ -21,7 +21,7 @@ func _unhandled_key_input(event):
 				queue_free()
 			1:
 				get_tree().paused = false
-				get_tree().change_scene_to_file('res://scenes/SyobonTitle.tscn')
+				Globals.transition_scene('res://scenes/SyobonTitle.tscn')
 func changeSel(a):
 	curSelected = wrap(curSelected+a, 0, options.size())
 	for i in options:

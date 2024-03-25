@@ -33,9 +33,9 @@ func _unhandled_key_input(event):
 	if Input.is_action_just_pressed('enter'):
 		match curSelected:
 			0:
-				get_tree().change_scene_to_file('res://scenes/devtools/IkariTerm.tscn')
+				Globals.enter_level('world_1/tutorial')
 			1:
-				get_tree().change_scene_to_file('res://scenes/SyobonOptions.tscn')
+				Globals.transition_scene('res://scenes/SyobonOptions.tscn')
 func changeSel(a):
 	curSelected = wrap(curSelected+a, 0, mainMenuElems.size())
 	jellosharp.animPlayer.play('dance')

@@ -22,7 +22,7 @@ func _physics_process(delta):
 		var object = objectThatComesOut.instantiate()
 		map.add_child(object)
 		object.position = position + Vector2(15,-15)
-		if object == Coin:
+		if object.name == 'Coin':
 			object.block()
 		
 

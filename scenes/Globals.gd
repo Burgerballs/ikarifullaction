@@ -3,13 +3,23 @@ extends CanvasLayer
 @onready var text = $Label
 @onready var sfx = $SFX
 @onready var music = $MUSIC
+@onready var transitioner = $ColorRect/AnimationPlayer
 var diffPhysicsProc:
 	get:
 		return Engine.physics_ticks_per_second / 120
 var levelCached:PackedScene = preload("res://maps/world_1/tutorial.tscn")
+
+func transition_scene(file):
+	get_tree().paused = true
+	transitioner.play("mosaic-in")
+	await get_tree().create_timer(0.2).timeout
+	get_tree().change_scene_to_file(file)
+	transitioner.play("mosaic-out")
+	get_tree().paused = false
+	
 func enter_level(level):
-	levelCached = load("res://maps/"+level+".tscn").instantiate()
-	get_tree().change_scene_to_file('res://scenes/SyobonGame.tscn')
+	levelCached = load("res://maps/"+level+".tscn")
+	transition_scene('res://scenes/SyobonGame.tscn')
 var prevDelta = 0
 var deltaCounter = 0
 func _process(delta):

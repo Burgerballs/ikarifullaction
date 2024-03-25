@@ -18,6 +18,10 @@ config/description="Imagine enjoying a nice day as a (somewhat) happy lawyer, th
 config/version="1.0.0.0"
 run/main_scene="res://scenes/SyobonTitle.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://ikari.png"
 
 [autoload]

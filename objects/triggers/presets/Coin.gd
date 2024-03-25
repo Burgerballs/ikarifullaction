@@ -13,12 +13,14 @@ func _on_animation_player_animation_finished(anim_name):
 		animPlayer.play('spin')
 	else:
 		animPlayer.play('face'+str(randi_range(1,4)))
+var blocking = false
+func _physics_process(delta):
+	if blocking:
+		position.y-=delta*Globals.diffPhysicsProc*200
 func block():
-	var tweenUP = create_tween().set_ease(Tween.EASE_OUT)
-	tweenUP.set_trans(Tween.TRANS_EXPO)
-	tweenUP.tween_callback(collect)
-	tweenUP.tween_property(self, 'position', Vector2(position.x,position.y - 15), 1)
-	tweenUP.play()
+	blocking = true
+	await get_tree().create_timer(0.2).timeout
+	collect()
 	
 func collect():
 	Globals.play_sound('coin')
