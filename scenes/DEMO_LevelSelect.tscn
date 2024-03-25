@@ -1,0 +1,456 @@
+[gd_scene load_steps=29 format=3 uid="uid://bn8lrtqa81mib"]
+
+[ext_resource type="Shader" path="res://scenes/SyobonTitle.gdshader" id="1_aqqaq"]
+[ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="2_7jwqm"]
+[ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="2_id586"]
+[ext_resource type="Texture2D" uid="uid://cf6wrx5f1urqa" path="res://images/golhit.png" id="4_hc5es"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2v7y"]
+shader = ExtResource("1_aqqaq")
+shader_parameter/WAVE_NUMBER = 0.75
+shader_parameter/WAVE_FREQUENCY = 0.3
+shader_parameter/WAVE_AMPLITUDE = 0.3
+
+[sub_resource type="Gradient" id="Gradient_1q0tw"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.0239234, 0.516746, 0.521531)
+colors = PackedColorArray(1, 0.498039, 0.152941, 1, 0.0862745, 0.117647, 0.2, 1, 1, 0.854902, 0.756863, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3bwwa"]
+gradient = SubResource("Gradient_1q0tw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m2vx7"]
+texture = SubResource("GradientTexture1D_3bwwa")
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_brqj3"]
+input_name = "color"
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_uklo3"]
+constant = 0.1
+
+[sub_resource type="VisualShaderNodeColorFunc" id="VisualShaderNodeColorFunc_88rby"]
+output_port_for_preview = 0
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_htmts"]
+parameter_name = "ColorParameter"
+default_value_enabled = true
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_0f1ok"]
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
+op_type = 2
+
+[sub_resource type="VisualShader" id="VisualShader_hrlxc"]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform vec4 ColorParameter : source_color = vec4(1.000000, 1.000000, 1.000000, 1.000000);
+
+
+
+void fragment() {
+// Input:3
+	vec4 n_out3p0 = COLOR;
+
+
+	vec3 n_out6p0;
+// ColorFunc:6
+	{
+		vec3 c = vec3(n_out3p0.xyz);
+		float max1 = max(c.r, c.g);
+		float max2 = max(max1, c.b);
+		n_out6p0 = vec3(max2, max2, max2);
+	}
+
+
+// ColorParameter:7
+	vec4 n_out7p0 = ColorParameter;
+
+
+// VectorOp:8
+	vec4 n_out8p0 = vec4(n_out6p0, 0.0) + n_out7p0;
+
+
+// Output:0
+	COLOR.rgb = vec3(n_out8p0.xyz);
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(800, 280)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_brqj3")
+nodes/fragment/3/position = Vector2(-160, 280)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatConstant_uklo3")
+nodes/fragment/5/position = Vector2(-180, 180)
+nodes/fragment/6/node = SubResource("VisualShaderNodeColorFunc_88rby")
+nodes/fragment/6/position = Vector2(180, 280)
+nodes/fragment/7/node = SubResource("VisualShaderNodeColorParameter_htmts")
+nodes/fragment/7/position = Vector2(380, 160)
+nodes/fragment/8/node = SubResource("VisualShaderNodeVectorOp_0f1ok")
+nodes/fragment/8/position = Vector2(404.555, 356.003)
+nodes/fragment/connections = PackedInt32Array(3, 0, 6, 0, 6, 0, 8, 0, 7, 0, 8, 1, 8, 0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ap0c"]
+shader = SubResource("VisualShader_hrlxc")
+shader_parameter/ColorParameter = Color(1, 0.498039, 0.152941, 1)
+
+[sub_resource type="Shader" id="Shader_hcug6"]
+code = "// The MIT License
+//
+// Copyright (c) 2021 Kevin Kuriakose (Technohacker)
+//
+// Permission is hereby granted, free of charge, 
+// to any person obtaining a copy of this software and 
+// associated documentation files (the \"Software\"), to 
+// deal in the Software without restriction, including 
+// without limitation the rights to use, copy, modify, 
+// merge, publish, distribute, sublicense, and/or sell 
+// copies of the Software, and to permit persons to whom 
+// the Software is furnished to do so, 
+// subject to the following conditions:
+//
+// The above copyright notice and this permission notice 
+// shall be included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, 
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES 
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR 
+// ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+// Works on CanvasItems (Node2D and Control)
+shader_type canvas_item;
+
+// How many waves are present throughout the object (Number)
+uniform float WAVE_NUMBER = 5.0;
+
+// How fast the wave completes a full cycle (Hertz)
+uniform float WAVE_FREQUENCY = 1.0;
+
+// How large the wave's side-to-side movement is (Texture Pixels)
+uniform float WAVE_AMPLITUDE = 0.5;
+
+void fragment() {
+    // All this shader does is set the current pixel's colour to another pixel's colour, depending on a given offset
+    // The offset is the required wave pattern
+    COLOR = texture(
+        // Take from the texture applied to it
+		TEXTURE,
+        // At the current pixel's coordinate plus the offset
+		UV + vec2(
+            // Where the offset is along the x axis and follows the standard wave equation
+            //     A sin(kx - wt)
+            // Where A = Amplitude of the wave
+            //       k = 2 * PI * wave number
+            //       w = 2 * PI * frequency
+            //       x = required position coordinate
+            //       t = time
+            // The extra UV.y parameter makes the amplitude grow from 0 to 1 as it goes from top to bottom,
+            // effectively pinning the wave at the top
+			WAVE_AMPLITUDE * TEXTURE_PIXEL_SIZE.y * UV.y * sin(
+				(2.0 * PI * WAVE_NUMBER * UV.y)
+				- (2.0 * PI * WAVE_FREQUENCY * TIME)
+            ),
+            // No y coordinate offset
+			0
+		)
+	);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s5qia"]
+shader = SubResource("Shader_hcug6")
+shader_parameter/WAVE_NUMBER = 1.5
+shader_parameter/WAVE_FREQUENCY = 0.3
+shader_parameter/WAVE_AMPLITUDE = 0.3
+
+[sub_resource type="Gradient" id="Gradient_yfwww"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.0239234, 0.516746, 0.5311)
+colors = PackedColorArray(1, 0.498039, 0.152941, 1, 0.0862745, 0.117647, 0.2, 1, 1, 0.854902, 0.756863, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vd2ym"]
+gradient = SubResource("Gradient_yfwww")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4fwum"]
+texture = SubResource("GradientTexture1D_vd2ym")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mhjy1"]
+font = ExtResource("2_7jwqm")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gbh1u"]
+font = ExtResource("2_7jwqm")
+font_size = 8
+
+[sub_resource type="Animation" id="Animation_22j2b"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 153, 216), Rect2(153, 0, 153, 216), Rect2(306, 0, 153, 216), Rect2(459, 0, 153, 216), Rect2(0, 216, 153, 216), Rect2(153, 216, 153, 216), Rect2(306, 216, 153, 216), Rect2(459, 216, 153, 216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_odbon"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 432, 153, 216), Rect2(153, 432, 153, 216), Rect2(306, 432, 153, 216), Rect2(459, 432, 153, 216)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:offset")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ln4ai"]
+_data = {
+"idle": SubResource("Animation_22j2b"),
+"talk": SubResource("Animation_odbon")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_t7tey"]
+font = ExtResource("2_7jwqm")
+font_size = 10
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dpeh0"]
+bg_color = Color(1, 0.854902, 0.756863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0823529, 0.113725, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_a5pcv"]
+font = ExtResource("2_7jwqm")
+font_size = 12
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="DemoLevelSelect" type="Node2D"]
+texture_filter = 1
+
+[node name="Panel" type="Panel" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_d2v7y")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(320, 240)
+theme_override_styles/panel = SubResource("StyleBoxTexture_m2vx7")
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_6ap0c")
+position = Vector2(0, 300)
+tile_set = ExtResource("2_id586")
+rendering_quadrant_size = 30
+format = 2
+layer_0/name = "tiles"
+layer_0/tile_data = PackedInt32Array(-1179537, 917505, 1, -1179536, 983041, 1, -720896, 262145, 1, -655360, 262145, 1, -589824, 262145, 1, -524288, 262145, 1, -458752, 262145, 1, -393216, 262145, 1, -327680, 262145, 1, -262144, 262145, 1, -196608, 262145, 1, -131072, 262145, 1, -65536, 262145, 1, 0, 262145, 1, 65536, 262145, 1, 131072, 262145, 1, 196608, 262145, 1, 262144, 262145, 1, 327680, 262145, 1, 393216, 262145, 1, 458752, 262145, 1, -720895, 262145, 1, -655359, 262145, 1, -589823, 262145, 1, -524287, 262145, 1, -458751, 262145, 1, -393215, 262145, 1, -327679, 262145, 1, -262143, 262145, 1, -196607, 262145, 1, -131071, 262145, 1, -65535, 262145, 1, 1, 262145, 1, 65537, 262145, 1, 131073, 262145, 1, 196609, 262145, 1, 262145, 262145, 1, 327681, 262145, 1, 393217, 262145, 1, 458753, 262145, 1, -720894, 262145, 1, -655358, 262145, 1, -589822, 262145, 1, -524286, 262145, 1, -458750, 262145, 1, -393214, 262145, 1, -327678, 262145, 1, -262142, 262145, 1, -196606, 262145, 1, -131070, 262145, 1, -65534, 262145, 1, 2, 262145, 1, 65538, 262145, 1, 131074, 262145, 1, 196610, 262145, 1, 262146, 262145, 1, 327682, 262145, 1, 393218, 262145, 1, 458754, 262145, 1, -720893, 196609, 1, -655357, 196609, 1, -589821, 196609, 1, -524285, 196609, 1, -458749, 196609, 1, -393213, 196609, 1, -327677, 196609, 1, -262141, 196609, 1, -196605, 196609, 1, -131069, 196609, 1, -65533, 196609, 1, 3, 196609, 1, 65539, 196609, 1, 131075, 196609, 1, 196611, 196609, 1, 262147, 196609, 1, 327683, 196609, 1, 393219, 196609, 1, 458755, 196609, 1, -720878, 262145, 1, -655342, 262145, 1, -589806, 262145, 1, -524270, 262145, 1, -458734, 262145, 1, -393198, 262145, 1, -327662, 262145, 1, -262126, 262145, 1, -196590, 262145, 1, -131054, 262145, 1, -65518, 262145, 1, 18, 262145, 1, 65554, 262145, 1, 131090, 262145, 1, 196626, 262145, 1, 262162, 262145, 1, 327698, 262145, 1, 393234, 262145, 1, 458770, 262145, 1, -720877, 262145, 1, -655341, 262145, 1, -589805, 262145, 1, -524269, 262145, 1, -458733, 262145, 1, -393197, 262145, 1, -327661, 262145, 1, -262125, 262145, 1, -196589, 262145, 1, -131053, 262145, 1, -65517, 262145, 1, 19, 262145, 1, 65555, 262145, 1, 131091, 262145, 1, 196627, 262145, 1, 262163, 262145, 1, 327699, 262145, 1, 393235, 262145, 1, 458771, 262145, 1, -720876, 262145, 1, -655340, 262145, 1, -589804, 262145, 1, -524268, 262145, 1, -458732, 262145, 1, -393196, 262145, 1, -327660, 262145, 1, -262124, 262145, 1, -196588, 262145, 1, -131052, 262145, 1, -65516, 262145, 1, 20, 262145, 1, 65556, 262145, 1, 131092, 262145, 1, 196628, 262145, 1, 262164, 262145, 1, 327700, 262145, 1, 393236, 262145, 1, 458772, 262145, 1, -720879, 65537, 1, -655343, 65537, 1, -589807, 65537, 1, -524271, 65537, 1, -458735, 65537, 1, -393199, 65537, 1, -327663, 65537, 1, -262127, 65537, 1, -196591, 65537, 1, -131055, 65537, 1, -65519, 65537, 1, 17, 65537, 1, 65553, 65537, 1, 131089, 65537, 1, 196625, 65537, 1, 262161, 65537, 1, 327697, 65537, 1, 393233, 65537, 1, 458769, 65537, 1, -720875, 262145, 1, -655339, 262145, 1, -589803, 262145, 1, -524267, 262145, 1, -458731, 262145, 1, -393195, 262145, 1, -327659, 262145, 1, -262123, 262145, 1, -196587, 262145, 1, -131051, 262145, 1, -65515, 262145, 1, 21, 262145, 1, 65557, 262145, 1, 131093, 262145, 1, 196629, 262145, 1, 262165, 262145, 1, 327701, 262145, 1, 393237, 262145, 1, 458773, 262145, 1)
+layer_1/name = "bgtiles"
+layer_1/z_index = -1
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "invisible"
+layer_2/modulate = Color(1, 1, 1, 0)
+layer_2/tile_data = PackedInt32Array(-458760, 1, 0, -393224, 1, 0, -327688, 1, 0, -262152, 1, 0, -196616, 1, 0, -131080, 1, 0, -65544, 1, 0, -8, 1, 0, 65528, 1, 0, 131064, 1, 0, -458759, 1, 0, -393223, 1, 0, -327687, 1, 0, -262151, 1, 0, -196615, 1, 0, -131079, 1, 0, -65543, 1, 0, -7, 1, 0, 65529, 1, 0, 131065, 1, 0, -458758, 1, 0, -393222, 1, 0, -327686, 1, 0, -262150, 1, 0, -196614, 1, 0, -131078, 1, 0, -65542, 1, 0, -6, 1, 0, 65530, 1, 0, 131066, 1, 0, -458757, 1, 0, -393221, 1, 0, -327685, 1, 0, -262149, 1, 0, -196613, 1, 0, -131077, 1, 0, -65541, 1, 0, -5, 1, 0, 65531, 1, 0, 131067, 1, 0, -1114120, 1, 0, -1048584, 1, 0, -983048, 1, 0, -917512, 1, 0, -851976, 1, 0, -786440, 1, 0, -720904, 1, 0, -655368, 1, 0, -589832, 1, 0, -524296, 1, 0, -1114119, 1, 0, -1048583, 1, 0, -983047, 1, 0, -917511, 1, 0, -851975, 1, 0, -786439, 1, 0, -720903, 1, 0, -655367, 1, 0, -589831, 1, 0, -524295, 1, 0, -1114118, 1, 0, -1048582, 1, 0, -983046, 1, 0, -917510, 1, 0, -851974, 1, 0, -786438, 1, 0, -720902, 1, 0, -655366, 1, 0, -589830, 1, 0, -524294, 1, 0, -1114117, 1, 0, -1048581, 1, 0, -983045, 1, 0, -917509, 1, 0, -851973, 1, 0, -786437, 1, 0, -720901, 1, 0, -655365, 1, 0, -589829, 1, 0, -524293, 1, 0)
+
+[node name="Panel2" type="Panel" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_s5qia")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 640.0
+offset_right = 781.0
+offset_bottom = 640.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5708
+theme_override_styles/panel = SubResource("StyleBoxTexture_4fwum")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 142.0
+offset_bottom = 32.0
+text = "SELECT YO LEVEL!!"
+label_settings = SubResource("LabelSettings_mhjy1")
+vertical_alignment = 1
+
+[node name="Panel3" type="ColorRect" parent="."]
+texture_filter = 1
+texture_repeat = 1
+offset_top = 470.0
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Panel3"]
+layout_mode = 0
+offset_left = 6.0
+offset_right = 646.0
+offset_bottom = 10.0
+text = "HELLO THIS IS BURGERBALLS I HOPE YOU LIKE MY LEVEL SELECT, BY THE WAY THIS WILL BE GONE IN THE FULL RELEASE LOL!!!"
+label_settings = SubResource("LabelSettings_gbh1u")
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(561, 160)
+texture = ExtResource("4_hc5es")
+region_enabled = true
+region_rect = Rect2(459, 0, 153, 216)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_ln4ai")
+}
+autoplay = "idle"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_top = 136.0
+offset_right = 228.0
+offset_bottom = 297.0
+
+[node name="Panel4" type="ColorRect" parent="VBoxContainer"]
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(2.08165e-12, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel4"]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 24.0
+text = "How To Play // Presented By Jellosharp!"
+label_settings = SubResource("LabelSettings_t7tey")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel5" type="ColorRect" parent="VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(2.08165e-12, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel5"]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 24.0
+text = "Clod Valley // Featuring the Clod Clan"
+label_settings = SubResource("LabelSettings_t7tey")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel6" type="ColorRect" parent="VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(2.08165e-12, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel6"]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 24.0
+text = "Tibes And Tribulations // Featuring Tibes"
+label_settings = SubResource("LabelSettings_t7tey")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel7" type="ColorRect" parent="VBoxContainer"]
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+texture_repeat = 1
+custom_minimum_size = Vector2(2.08165e-12, 24)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel7"]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 24.0
+text = "Bridge-o-matic II // Featuring Crabs"
+label_settings = SubResource("LabelSettings_t7tey")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Panel4" type="Panel" parent="."]
+offset_left = 6.0
+offset_top = 368.0
+offset_right = 612.0
+offset_bottom = 464.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dpeh0")
+
+[node name="Panel5" type="Panel" parent="Panel4"]
+offset_left = 27.0
+offset_top = 11.0
+offset_right = 123.0
+offset_bottom = 83.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dpeh0")
+
+[node name="Label" type="Label" parent="Panel4/Panel5"]
+layout_mode = 0
+offset_right = 96.0
+offset_bottom = 72.0
+text = "Level Image"
+label_settings = SubResource("LabelSettings_a5pcv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel4"]
+offset_left = 127.0
+offset_top = 11.0
+offset_right = 600.0
+offset_bottom = 83.0
+text = "Level Name
+Stats Blah Blah Blah"
+label_settings = SubResource("LabelSettings_t7tey")
+vertical_alignment = 1

@@ -19,30 +19,30 @@ interpolation_mode = 1
 offsets = PackedFloat32Array(0.0239234, 0.516746, 0.521531)
 colors = PackedColorArray(1, 0.498039, 0.152941, 1, 0.0862745, 0.117647, 0.2, 1, 1, 0.854902, 0.756863, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_3bwwa"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d3opi"]
 gradient = SubResource("Gradient_epani")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1moo"]
-texture = SubResource("GradientTexture1D_3bwwa")
+texture = SubResource("GradientTexture1D_d3opi")
 
-[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_brqj3"]
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ylx67"]
 input_name = "color"
 
-[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_uklo3"]
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_qugva"]
 constant = 0.1
 
-[sub_resource type="VisualShaderNodeColorFunc" id="VisualShaderNodeColorFunc_88rby"]
+[sub_resource type="VisualShaderNodeColorFunc" id="VisualShaderNodeColorFunc_cpnpa"]
 output_port_for_preview = 0
 
-[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_htmts"]
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_o3rav"]
 parameter_name = "ColorParameter"
 default_value_enabled = true
 
-[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_0f1ok"]
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_qu6mo"]
 default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
 op_type = 2
 
-[sub_resource type="VisualShader" id="VisualShader_hrlxc"]
+[sub_resource type="VisualShader" id="VisualShader_2w6ht"]
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
@@ -82,20 +82,20 @@ void fragment() {
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(800, 280)
-nodes/fragment/3/node = SubResource("VisualShaderNodeInput_brqj3")
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_ylx67")
 nodes/fragment/3/position = Vector2(-160, 280)
-nodes/fragment/5/node = SubResource("VisualShaderNodeFloatConstant_uklo3")
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatConstant_qugva")
 nodes/fragment/5/position = Vector2(-180, 180)
-nodes/fragment/6/node = SubResource("VisualShaderNodeColorFunc_88rby")
+nodes/fragment/6/node = SubResource("VisualShaderNodeColorFunc_cpnpa")
 nodes/fragment/6/position = Vector2(180, 280)
-nodes/fragment/7/node = SubResource("VisualShaderNodeColorParameter_htmts")
+nodes/fragment/7/node = SubResource("VisualShaderNodeColorParameter_o3rav")
 nodes/fragment/7/position = Vector2(380, 160)
-nodes/fragment/8/node = SubResource("VisualShaderNodeVectorOp_0f1ok")
+nodes/fragment/8/node = SubResource("VisualShaderNodeVectorOp_qu6mo")
 nodes/fragment/8/position = Vector2(404.555, 356.003)
 nodes/fragment/connections = PackedInt32Array(3, 0, 6, 0, 6, 0, 8, 0, 7, 0, 8, 1, 8, 0, 0, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3kkfp"]
-shader = SubResource("VisualShader_hrlxc")
+shader = SubResource("VisualShader_2w6ht")
 shader_parameter/ColorParameter = Color(1, 0.498039, 0.152941, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61ab8"]
