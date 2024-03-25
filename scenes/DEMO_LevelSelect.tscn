@@ -1,5 +1,6 @@
-[gd_scene load_steps=29 format=3 uid="uid://bn8lrtqa81mib"]
+[gd_scene load_steps=30 format=3 uid="uid://bn8lrtqa81mib"]
 
+[ext_resource type="Script" path="res://scenes/DEMO_LevelSelect.gd" id="1_4xllr"]
 [ext_resource type="Shader" path="res://scenes/SyobonTitle.gdshader" id="1_aqqaq"]
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="2_7jwqm"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="2_id586"]
@@ -272,6 +273,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="DemoLevelSelect" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_4xllr")
 
 [node name="Panel" type="Panel" parent="."]
 texture_filter = 1
@@ -430,6 +432,7 @@ offset_bottom = 464.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_dpeh0")
 
 [node name="Panel5" type="Panel" parent="Panel4"]
+layout_mode = 0
 offset_left = 27.0
 offset_top = 11.0
 offset_right = 123.0
@@ -446,6 +449,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Panel4"]
+layout_mode = 0
 offset_left = 127.0
 offset_top = 11.0
 offset_right = 600.0
