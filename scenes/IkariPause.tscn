@@ -1,28 +1,30 @@
-[gd_scene load_steps=17 format=3 uid="uid://uhxs203ibu8o"]
+[gd_scene load_steps=21 format=3 uid="uid://uhxs203ibu8o"]
 
 [ext_resource type="Shader" path="res://scenes/InvertBehind.gdshader" id="1_c7ver"]
 [ext_resource type="Script" path="res://scenes/IkariPause.gd" id="1_pmbp2"]
 [ext_resource type="Shader" path="res://scenes/SyobonTitle.gdshader" id="1_rat7e"]
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="1_ur63m"]
+[ext_resource type="AudioStream" uid="uid://bhg57e4mskkaj" path="res://audio/bgm/puase.mp3" id="5_4vp7o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_focfq"]
 shader = ExtResource("1_c7ver")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_06tmx"]
 shader = ExtResource("1_rat7e")
-shader_parameter/WAVE_NUMBER = 0.75
+shader_parameter/WAVE_NUMBER = 1.5
 shader_parameter/WAVE_FREQUENCY = 0.3
 shader_parameter/WAVE_AMPLITUDE = 0.3
 
-[sub_resource type="Gradient" id="Gradient_0a3j0"]
+[sub_resource type="Gradient" id="Gradient_thjge"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0.0239234, 0.516746, 0.521531)
 colors = PackedColorArray(1, 0.498039, 0.152941, 1, 1, 0.854902, 0.756863, 1, 1, 0.854902, 0.756863, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_uu2fa"]
-gradient = SubResource("Gradient_0a3j0")
+gradient = SubResource("Gradient_thjge")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4shma"]
+content_margin_left = 8.0
 texture = SubResource("GradientTexture1D_uu2fa")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ggyu"]
@@ -37,15 +39,27 @@ font_size = 8
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_16h8d"]
-font = ExtResource("1_ur63m")
-font_size = 8
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_s6c6j"]
 font = ExtResource("1_ur63m")
 font_size = 24
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_rusxs"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0.0239234, 0.516746, 0.5311)
+colors = PackedColorArray(1, 0.498039, 0.152941, 1, 1, 0.854902, 0.756863, 1, 1, 0.854902, 0.756863, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1wckl"]
+gradient = SubResource("Gradient_rusxs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k84m3"]
+content_margin_left = 8.0
+texture = SubResource("GradientTexture1D_1wckl")
+
+[sub_resource type="LabelSettings" id="LabelSettings_16h8d"]
+font = ExtResource("1_ur63m")
+font_size = 8
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
@@ -63,6 +77,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-510, 0), Vector2(2.08165e-12, 2.08165e-12)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_wutb4"]
 length = 0.001
@@ -78,6 +104,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(-510, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bm7b7"]
 _data = {
@@ -90,6 +128,7 @@ process_mode = 3
 script = ExtResource("1_pmbp2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
 material = SubResource("ShaderMaterial_focfq")
 offset_right = 660.0
 offset_bottom = 480.0
@@ -112,17 +151,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2ggyu")
 text = "THE PASSAGE OF TIME CONTINUES NO LONGER..."
 label_settings = SubResource("LabelSettings_eqyqp")
 horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Panel2"]
-texture_filter = 1
-offset_top = 390.0
-offset_right = 480.0
-offset_bottom = 450.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_2ggyu")
-text = "Remember, if you exit or retry the level, Ikari forgets that she even played it! 
-In order for Ikari to remember, you must beat the level!"
-label_settings = SubResource("LabelSettings_16h8d")
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel2"]
@@ -154,8 +182,34 @@ label_settings = SubResource("LabelSettings_s6c6j")
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="Panel" type="Panel" parent="Panel2"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_06tmx")
+layout_mode = 0
+offset_top = 480.0
+offset_right = 107.0
+offset_bottom = 1630.0
+rotation = -1.5708
+theme_override_styles/panel = SubResource("StyleBoxTexture_k84m3")
+
+[node name="Label2" type="Label" parent="Panel2/Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 60.0
+offset_top = 8.0
+offset_right = 450.0
+offset_bottom = 68.0
+rotation = 1.5708
+text = "Remember, if you exit or retry the level, Ikari forgets that she even played it! 
+In order for Ikari to remember, you must beat the level!"
+label_settings = SubResource("LabelSettings_16h8d")
+vertical_alignment = 1
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Panel2"]
 libraries = {
 "": SubResource("AnimationLibrary_bm7b7")
 }
 autoplay = "enter"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_4vp7o")

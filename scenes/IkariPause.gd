@@ -5,6 +5,9 @@ var curSelected = 0
 func _ready():
 	get_tree().paused = true
 	changeSel(0)
+	$AudioStreamPlayer.play()
+	$AudioStreamPlayer.volume_db = -40
+	create_tween().tween_property($AudioStreamPlayer, 'volume_db', 0, 0.5)
 func _unhandled_key_input(event):
 	if Input.is_action_just_pressed('up'):
 		changeSel(-1)

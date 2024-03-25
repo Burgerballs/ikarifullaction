@@ -35,6 +35,7 @@ max_polyphony = 1000
 bus = &"SFX"
 
 [node name="MUSIC" type="AudioStreamPlayer" parent="."]
+process_mode = 1
 stream = ExtResource("3_rq1tr")
 max_polyphony = 1000
 bus = &"MUSIC"
