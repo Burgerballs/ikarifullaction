@@ -150,7 +150,7 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjhwu"]
 
-[node name="Coin" type="Sprite2D"]
+[node name="Coin" type="Sprite2D" groups=["coinable"]]
 texture_filter = 1
 position = Vector2(2.08165e-12, 2.08165e-12)
 texture = ExtResource("1_gw3u4")

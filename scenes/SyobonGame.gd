@@ -11,6 +11,12 @@ var coins:int = 0
 func _ready():
 	map = Globals.levelCached.instantiate()
 	var playerPos = map.find_child('PlayerSpawn').position
+	if map.find_child('CameraArea'):
+		var cameraBounds = map.find_child('CameraArea')
+		playerCam.limit_bottom = cameraBounds.global_position.y + cameraBounds.size.y
+		playerCam.limit_top = cameraBounds.global_position.y
+		playerCam.limit_right = cameraBounds.global_position.x + cameraBounds.size.x
+		playerCam.limit_left = cameraBounds.global_position.x
 	add_child(map)
 	playerChar = load('res://objects/players/' +player+ '.tscn').instantiate()
 	add_child(playerChar)

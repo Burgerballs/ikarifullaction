@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://uqk1htth4oo4"]
+
+[ext_resource type="Script" path="res://objects/triggers/MapCaller.gd" id="1_c8cnp"]
+[ext_resource type="Script" path="res://objects/triggers/presets/DeathFloor.gd" id="1_ltdpl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anoy3"]
+
+[node name="DeathFloor" type="Node2D"]
+script = ExtResource("1_ltdpl")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_c8cnp")
+call_name = "kill"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_anoy3")

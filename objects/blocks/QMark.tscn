@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bgm0j7oevq845" path="res://images/blocks/itembloxs.png" id="1_5ajtk"]
 [ext_resource type="Script" path="res://objects/blocks/QMark.gd" id="1_e3gst"]
 
-[sub_resource type="Animation" id="Animation_xvoh8"]
+[sub_resource type="Animation" id="Animation_u3ers"]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -30,7 +30,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_suu3j"]
+[sub_resource type="Animation" id="Animation_l43s0"]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -57,7 +57,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_m1r6k"]
+[sub_resource type="Animation" id="Animation_405l2"]
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -83,7 +83,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_5qpgx"]
+[sub_resource type="Animation" id="Animation_8uk15"]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -110,7 +110,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_y2hrx"]
+[sub_resource type="Animation" id="Animation_2b0am"]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -137,7 +137,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_2tyji"]
+[sub_resource type="Animation" id="Animation_d7dro"]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -164,7 +164,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_u5m8s"]
+[sub_resource type="Animation" id="Animation_50bsu"]
 length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -191,7 +191,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_kpobg"]
+[sub_resource type="Animation" id="Animation_vgkap"]
 length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -218,7 +218,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_3ye4j"]
+[sub_resource type="Animation" id="Animation_m42td"]
 length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
@@ -246,7 +246,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_4qi4s"]
+[sub_resource type="Animation" id="Animation_7251w"]
 length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
@@ -274,7 +274,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_bw7ow"]
+[sub_resource type="Animation" id="Animation_ngk7r"]
 length = 1.6
 loop_mode = 1
 tracks/0/type = "value"
@@ -302,7 +302,7 @@ tracks/1/keys = {
 "values": [Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_2ps7q"]
+[sub_resource type="Animation" id="Animation_ueyea"]
 length = 0.1
 loop_mode = 1
 tracks/0/type = "value"
@@ -330,48 +330,45 @@ tracks/1/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayfnk"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3jxwr"]
 _data = {
-"empty1": SubResource("Animation_xvoh8"),
-"empty2": SubResource("Animation_suu3j"),
-"empty3": SubResource("Animation_m1r6k"),
-"empty4": SubResource("Animation_5qpgx"),
-"hit1": SubResource("Animation_y2hrx"),
-"hit2": SubResource("Animation_2tyji"),
-"hit3": SubResource("Animation_u5m8s"),
-"hit4": SubResource("Animation_kpobg"),
-"idle1": SubResource("Animation_3ye4j"),
-"idle2": SubResource("Animation_4qi4s"),
-"idle3": SubResource("Animation_bw7ow"),
-"idle4": SubResource("Animation_2ps7q")
+"empty1": SubResource("Animation_u3ers"),
+"empty2": SubResource("Animation_l43s0"),
+"empty3": SubResource("Animation_405l2"),
+"empty4": SubResource("Animation_8uk15"),
+"hit1": SubResource("Animation_2b0am"),
+"hit2": SubResource("Animation_d7dro"),
+"hit3": SubResource("Animation_50bsu"),
+"hit4": SubResource("Animation_vgkap"),
+"idle1": SubResource("Animation_m42td"),
+"idle2": SubResource("Animation_7251w"),
+"idle3": SubResource("Animation_ngk7r"),
+"idle4": SubResource("Animation_ueyea")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uc4e"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ot1mj"]
 size = Vector2(30, 30)
 
-[node name="QMark" type="CharacterBody2D" groups=["blocks"]]
+[node name="QMark" type="Sprite2D" groups=["blocks"]]
 texture_filter = 1
-collision_layer = 32
-collision_mask = 32
-slide_on_ceiling = false
-platform_on_leave = 2
-script = ExtResource("1_e3gst")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-7, -7)
 texture = ExtResource("1_5ajtk")
-centered = false
 region_enabled = true
 region_rect = Rect2(129, 43, 43, 43)
+script = ExtResource("1_e3gst")
 
-[node name="AnimationTree" type="AnimationPlayer" parent="Sprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_ayfnk")
+"": SubResource("AnimationLibrary_3jxwr")
 }
 autoplay = "idle1"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(15, 15)
-shape = SubResource("RectangleShape2D_5uc4e")
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+wall_min_slide_angle = 0.0
 
-[connection signal="animation_finished" from="Sprite2D/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0.5, 0.4)
+shape = SubResource("RectangleShape2D_ot1mj")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
