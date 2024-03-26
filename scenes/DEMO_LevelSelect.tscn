@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bn8lrtqa81mib"]
+[gd_scene load_steps=32 format=3 uid="uid://bn8lrtqa81mib"]
 
 [ext_resource type="Script" path="res://scenes/DEMO_LevelSelect.gd" id="1_4xllr"]
 [ext_resource type="Shader" path="res://scenes/SyobonTitle.gdshader" id="1_aqqaq"]
@@ -271,6 +271,18 @@ font_size = 12
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_v0f0v"]
+font = ExtResource("2_7jwqm")
+font_size = 24
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xf7cg"]
+font = ExtResource("2_7jwqm")
+font_size = 10
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
 [node name="DemoLevelSelect" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_4xllr")
@@ -453,8 +465,18 @@ layout_mode = 0
 offset_left = 127.0
 offset_top = 11.0
 offset_right = 600.0
+offset_bottom = 48.0
+text = "Level Name"
+label_settings = SubResource("LabelSettings_v0f0v")
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel4"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 48.0
+offset_right = 600.0
 offset_bottom = 83.0
-text = "Level Name
-Stats Blah Blah Blah"
-label_settings = SubResource("LabelSettings_t7tey")
+text = "Best Performance:
+Awesomeness Points: 0 // Time: 1:30 // Rank: :3 // Vanquished: 100"
+label_settings = SubResource("LabelSettings_xf7cg")
 vertical_alignment = 1

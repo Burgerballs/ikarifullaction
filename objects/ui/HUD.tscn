@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cddhlft02vklm"]
+[gd_scene load_steps=14 format=3 uid="uid://cddhlft02vklm"]
 
 [ext_resource type="PackedScene" uid="uid://c0fcoecnia2gk" path="res://objects/ui/HUD/CoinCounter.tscn" id="1_m7rsb"]
 [ext_resource type="Script" path="res://objects/ui/HUD.gd" id="1_sne3c"]
 [ext_resource type="PackedScene" uid="uid://bvtcjnox70rs7" path="res://objects/ui/HUD/Score.tscn" id="2_yvx3a"]
 [ext_resource type="Texture2D" uid="uid://gy4lkcb76gsm" path="res://objects/ui/HUD/epic images.png" id="3_mrhd4"]
+[ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="5_dwjmp"]
 
 [sub_resource type="Animation" id="Animation_2g3tu"]
 length = 0.001
@@ -41,6 +42,71 @@ _data = {
 "ikari": SubResource("Animation_kvaqb")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrqrc"]
+content_margin_left = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_q1bof"]
+font = ExtResource("5_dwjmp")
+font_size = 12
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_xbjdw"]
+resource_name = "hit"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3, -1, 2.08165e-12, 2.08165e-12, 2.08165e-12, 1, -0.6, 2.08165e-12, 1, 2.08165e-12),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3, 0, 2.08165e-12, 2.08165e-12, 2.08165e-12, 1, -1, 2.08165e-12, 2.08165e-12, 2.08165e-12),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_vl6g7"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_djii6"]
+_data = {
+"RESET": SubResource("Animation_vl6g7"),
+"hit": SubResource("Animation_xbjdw")
+}
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_sne3c")
 
@@ -75,3 +141,22 @@ libraries = {
 "": SubResource("AnimationLibrary_ichqs")
 }
 autoplay = "ikari"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -15.0
+offset_right = 54.0
+grow_vertical = 0
+pivot_offset = Vector2(2.08165e-12, 15)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vrqrc")
+text = "Combo: x3"
+label_settings = SubResource("LabelSettings_q1bof")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+"": SubResource("AnimationLibrary_djii6")
+}
