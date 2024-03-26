@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfmi1tnmricmk"]
+
+[ext_resource type="Texture2D" uid="uid://baxfvri6fnldr" path="res://images/blocks/blockbits.png" id="1_j3nqo"]
+
+[sub_resource type="Gradient" id="Gradient_vmwr1"]
+offsets = PackedFloat32Array(0, 0.0295359, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Splodie" type="CPUParticles2D"]
+amount = 4
+lifetime = 0.8
+explosiveness = 1.0
+local_coords = true
+draw_order = 1
+texture = ExtResource("1_j3nqo")
+emission_shape = 3
+emission_rect_extents = Vector2(5, 5)
+direction = Vector2(1, 2.08165e-12)
+spread = 180.0
+gravity = Vector2(30, 980)
+initial_velocity_max = 169.01
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+linear_accel_max = 22.54
+angle_min = -180.0
+angle_max = 180.0
+color_ramp = SubResource("Gradient_vmwr1")

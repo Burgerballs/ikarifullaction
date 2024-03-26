@@ -57,7 +57,13 @@ func splodey(pos:Vector2):
 	play_sound('splodie', 1, 0.0, 0.7, 'reverberate')
 	magic.position = pos
 	get_tree().current_scene.add_child(magic)
-	await get_tree().create_timer(magic.lifetime).timeout
+	await get_tree().create_timer(magic.lifetime*0.99).timeout
 	magic.queue_free() 
 	
 	
+func blockey(pos:Vector2):
+	var magic = load("res://objects/effects/blockbits.tscn").instantiate()
+	magic.position = pos
+	get_tree().current_scene.add_child(magic)
+	await get_tree().create_timer(magic.lifetime).timeout
+	magic.queue_free() 

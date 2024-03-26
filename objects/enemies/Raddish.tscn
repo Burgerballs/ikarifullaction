@@ -96,7 +96,7 @@ _data = {
 size = Vector2(28, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a48jo"]
-size = Vector2(18, 22)
+size = Vector2(20, 24)
 
 [node name="Raddish" type="CharacterBody2D" groups=["enemy"]]
 texture_filter = 1
@@ -129,7 +129,7 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="raddibox" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(-16, -11)
+position = Vector2(-16, -12)
 shape = SubResource("RectangleShape2D_a48jo")
 debug_color = Color(1, 0, 0, 0.482353)
 
