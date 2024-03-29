@@ -1,15 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://do54pqrtruaor"]
+[gd_scene load_steps=22 format=3 uid="uid://do54pqrtruaor"]
 
 [ext_resource type="Script" path="res://maps/world_1/tutorial.gd" id="1_koq5r"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="2_3k4tb"]
 [ext_resource type="AudioStream" uid="uid://cug0adikyas2v" path="res://audio/bgm/BGM_clod_valley.ogg" id="2_rvd4o"]
+[ext_resource type="PackedScene" uid="uid://cqls1j8expggt" path="res://maps/BGs/sky.tscn" id="3_xhdr0"]
+[ext_resource type="Texture2D" uid="uid://bl0bgt4atsvt0" path="res://images/BGs/hills/new/stones.png" id="4_002qw"]
+[ext_resource type="Texture2D" uid="uid://d0xv1doylb3l7" path="res://images/BGs/hills/new/hill3.png" id="4_t1lyg"]
+[ext_resource type="Texture2D" uid="uid://8clr2dpjdmxu" path="res://images/BGs/hills/new/hill1.png" id="4_w33br"]
+[ext_resource type="Texture2D" uid="uid://ig6ul0so18kp" path="res://images/BGs/hills/new/toast.png" id="5_3wc4o"]
+[ext_resource type="Texture2D" uid="uid://d3nx8acol8bqv" path="res://images/BGs/hills/new/hill2.png" id="5_17mah"]
 [ext_resource type="PackedScene" uid="uid://bm7s41plxixei" path="res://objects/triggers/presets/Jellosharp.tscn" id="5_c4srg"]
 [ext_resource type="Script" path="res://objects/triggers/MapCaller.gd" id="6_3l4tr"]
 [ext_resource type="PackedScene" uid="uid://deps3ospdu8qn" path="res://objects/enemies/Raddish.tscn" id="7_fg7a7"]
 [ext_resource type="PackedScene" uid="uid://dtiqx0c46emyu" path="res://objects/enemies/Runny.tscn" id="8_1yjm3"]
 [ext_resource type="PackedScene" uid="uid://dd28e1na06yv0" path="res://objects/triggers/presets/Coin.tscn" id="9_g6vbf"]
 [ext_resource type="PackedScene" uid="uid://da32itsrva28p" path="res://objects/blocks/QMark.tscn" id="10_7uq1n"]
-[ext_resource type="PackedScene" uid="uid://dintyulihmw5r" path="res://maps/BGs/WavyLand.tscn" id="10_dfr6r"]
 [ext_resource type="PackedScene" uid="uid://byc04x2ffagfp" path="res://objects/triggers/presets/BoomboxFlower.tscn" id="11_qwj86"]
 [ext_resource type="PackedScene" uid="uid://cklegrocw1g4w" path="res://objects/blocks/Block.tscn" id="12_dkbbr"]
 [ext_resource type="PackedScene" uid="uid://c2oyq40cksige" path="res://objects/triggers/presets/End_Portal.tscn" id="13_rkblu"]
@@ -28,8 +33,7 @@ size = Vector2(90, 120)
 script = ExtResource("1_koq5r")
 bgm = ExtResource("2_rvd4o")
 
-[node name="WavyLand" parent="." instance=ExtResource("10_dfr6r")]
-position = Vector2(1350, 180)
+[node name="hills" parent="." instance=ExtResource("3_xhdr0")]
 
 [node name="CameraArea" type="Control" parent="."]
 layout_mode = 3
@@ -38,6 +42,73 @@ offset_left = -210.0
 offset_top = -90.0
 offset_right = 10710.0
 offset_bottom = 1860.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_offset = Vector2(2.08165e-12, 260)
+
+[node name="Toast2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(950, 30)
+texture = ExtResource("5_3wc4o")
+flip_h = true
+
+[node name="Toast" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(150, 52)
+texture = ExtResource("5_3wc4o")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_offset = Vector2(2.08165e-12, 260)
+
+[node name="Hill3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1139, 141)
+texture = ExtResource("4_t1lyg")
+
+[node name="Hill4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(674, 111)
+texture = ExtResource("4_t1lyg")
+
+[node name="Stones" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(946, -39)
+texture = ExtResource("4_002qw")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.7)
+motion_offset = Vector2(2.08165e-12, 260)
+
+[node name="Hill1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(567, 319)
+texture = ExtResource("5_17mah")
+
+[node name="Hill2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(1212, 328)
+texture = ExtResource("5_17mah")
+
+[node name="Hill3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(2409, 203)
+texture = ExtResource("5_17mah")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.7)
+motion_offset = Vector2(2.08165e-12, 260)
+
+[node name="Hill1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(196, 334)
+texture = ExtResource("4_w33br")
+
+[node name="Hill2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(834, 344)
+texture = ExtResource("4_w33br")
+
+[node name="Hill3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1982, 220)
+texture = ExtResource("4_w33br")
+
+[node name="Hill4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(2950, 215)
+texture = ExtResource("4_w33br")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -192,4 +263,4 @@ position = Vector2(765, 285)
 position = Vector2(645, 285)
 
 [node name="EndPortal" parent="." instance=ExtResource("13_rkblu")]
-position = Vector2(261, 314)
+position = Vector2(10348, 1317)

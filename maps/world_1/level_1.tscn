@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://maps/BaseMap.gd" id="1_2flkr"]
 [ext_resource type="AudioStream" uid="uid://cug0adikyas2v" path="res://audio/bgm/BGM_clod_valley.ogg" id="2_si2r4"]
-[ext_resource type="PackedScene" uid="uid://cqls1j8expggt" path="res://maps/BGs/hills.tscn" id="3_rhyh4"]
+[ext_resource type="PackedScene" uid="uid://cqls1j8expggt" path="res://maps/BGs/sky.tscn" id="3_rhyh4"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="4_kou4m"]
 [ext_resource type="PackedScene" uid="uid://deps3ospdu8qn" path="res://objects/enemies/Raddish.tscn" id="5_sisvv"]
 [ext_resource type="PackedScene" path="res://objects/enemies/PurpleHorseVirus.tscn" id="6_5adpi"]

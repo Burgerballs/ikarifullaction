@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqls1j8expggt"]
+[gd_scene load_steps=2 format=3 uid="uid://cqls1j8expggt"]
 
 [ext_resource type="Texture2D" uid="uid://djr55qmhcl0ag" path="res://images/BGs/hills/sky.png" id="1_8huwn"]
-[ext_resource type="Texture2D" uid="uid://pbrgadgix5gy" path="res://images/BGs/hills/catbushes.png" id="2_djrwv"]
 
 [node name="hills" type="Node2D"]
 texture_filter = 1
@@ -13,21 +12,9 @@ motion_scale = Vector2(0.1, 0.1)
 
 [node name="Sky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 texture_filter = 1
-texture_repeat = 3
+texture_repeat = 1
 position = Vector2(3780, 180)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_8huwn")
 region_enabled = true
 region_rect = Rect2(0, 0, 8640, 480)
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(-7, -64)
-motion_scale = Vector2(0.2, 0.2)
-
-[node name="Catbushes" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture_filter = 1
-texture_repeat = 3
-position = Vector2(2917, 304)
-texture = ExtResource("2_djrwv")
-region_enabled = true
-region_rect = Rect2(-10.315, 0, 9096.63, 480)
