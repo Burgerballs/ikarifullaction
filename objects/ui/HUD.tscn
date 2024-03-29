@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cddhlft02vklm"]
+[gd_scene load_steps=18 format=3 uid="uid://cddhlft02vklm"]
 
 [ext_resource type="PackedScene" uid="uid://c0fcoecnia2gk" path="res://objects/ui/HUD/CoinCounter.tscn" id="1_m7rsb"]
 [ext_resource type="Script" path="res://objects/ui/HUD.gd" id="1_sne3c"]
@@ -107,16 +107,33 @@ _data = {
 "hit": SubResource("Animation_xbjdw")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_flau6"]
+font = ExtResource("5_dwjmp")
+font_size = 8
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_exg6f"]
+color = Color(0, 1, 0, 1)
+thickness = 2
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6dams"]
+color = Color(1, 0, 0, 1)
+thickness = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_g0h2q"]
+font = ExtResource("5_dwjmp")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_sne3c")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 [node name="CoinCounter" parent="CanvasModulate" instance=ExtResource("1_m7rsb")]
-offset_left = 594.0
-offset_top = 15.0
-offset_right = 659.0
-offset_bottom = 47.0
+offset_left = 585.0
+offset_top = 41.0
+offset_right = 650.0
+offset_bottom = 73.0
 
 [node name="Score" parent="CanvasModulate" instance=ExtResource("2_yvx3a")]
 anchors_preset = 1
@@ -144,22 +161,53 @@ libraries = {
 }
 autoplay = "ikari"
 
-[node name="Label" type="Label" parent="CanvasModulate"]
-visible = false
+[node name="ComboLabel" type="Label" parent="CanvasModulate"]
 texture_filter = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = 465.0
-offset_right = 56.0
-offset_bottom = 480.0
+offset_left = 1.0
+offset_top = 464.0
+offset_right = 117.0
+offset_bottom = 479.0
 grow_vertical = 0
 pivot_offset = Vector2(2.08165e-12, 15)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_vrqrc")
-text = "Combo: x3"
+text = "Combo: x3 | SUPER!"
 label_settings = SubResource("LabelSettings_q1bof")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate/Label"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate/ComboLabel"]
 libraries = {
 "": SubResource("AnimationLibrary_djii6")
 }
+
+[node name="Label" type="Label" parent="CanvasModulate/ComboLabel"]
+layout_mode = 2
+offset_left = 2.0
+offset_top = -11.0
+offset_right = 115.0
+offset_bottom = -1.0
+text = "Coin Collected +50"
+label_settings = SubResource("LabelSettings_flau6")
+vertical_alignment = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasModulate/ComboLabel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -13.0
+offset_right = 115.0
+offset_bottom = -11.0
+theme_override_styles/background = SubResource("StyleBoxLine_exg6f")
+theme_override_styles/fill = SubResource("StyleBoxLine_6dams")
+value = 50.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasModulate"]
+offset_left = 541.0
+offset_top = 26.0
+offset_right = 635.0
+offset_bottom = 49.0
+text = "Time: 99:99"
+label_settings = SubResource("LabelSettings_g0h2q")
+horizontal_alignment = 2
