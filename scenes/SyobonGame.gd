@@ -8,6 +8,7 @@ var lockCameraY = false
 var lockPos = Vector2(7,-87)
 var score:int = 0
 var coins:int = 0
+var cutsceneMode = false ## this will be super evil later
 func _ready():
 	map = Globals.levelCached.instantiate()
 	var playerPos = map.find_child('PlayerSpawn').position
@@ -29,6 +30,8 @@ func _unhandled_key_input(event):
 		add_child(load("res://scenes/IkariPause.tscn").instantiate())
 func _process(delta):
 	$HUD.update()
+func start_cutscene():
+	pass
 func kill():
 	Globals.play_sound('die')
 	lockPos.x = playerChar.position.x if !lockCameraX else lockPos.x

@@ -19,3 +19,4 @@ func on_trigger(a,b):
 				'xy':
 					game.lockCameraY = lock
 					game.lockCameraX = game.lockCameraY
+			game.playerCam.position_smoothing_speed = 30 if !lock else 0
