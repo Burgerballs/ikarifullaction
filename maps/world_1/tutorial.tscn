@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://do54pqrtruaor"]
+[gd_scene load_steps=17 format=3 uid="uid://do54pqrtruaor"]
 
 [ext_resource type="Script" path="res://maps/world_1/tutorial.gd" id="1_koq5r"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="2_3k4tb"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dintyulihmw5r" path="res://maps/BGs/WavyLand.tscn" id="10_dfr6r"]
 [ext_resource type="PackedScene" uid="uid://byc04x2ffagfp" path="res://objects/triggers/presets/BoomboxFlower.tscn" id="11_qwj86"]
 [ext_resource type="PackedScene" uid="uid://cklegrocw1g4w" path="res://objects/blocks/Block.tscn" id="12_dkbbr"]
+[ext_resource type="PackedScene" uid="uid://c2oyq40cksige" path="res://objects/triggers/presets/End_Portal.tscn" id="13_rkblu"]
 
 [sub_resource type="Gradient" id="Gradient_4n0ko"]
 interpolation_color_space = 2
@@ -189,3 +190,6 @@ position = Vector2(765, 285)
 
 [node name="QMark3" parent="." instance=ExtResource("12_dkbbr")]
 position = Vector2(645, 285)
+
+[node name="EndPortal" parent="." instance=ExtResource("13_rkblu")]
+position = Vector2(261, 314)

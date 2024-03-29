@@ -1,0 +1,169 @@
+[gd_scene load_steps=15 format=3 uid="uid://c2oyq40cksige"]
+
+[ext_resource type="Script" path="res://objects/triggers/presets/End_Portal.gd" id="1_a4471"]
+[ext_resource type="Texture2D" uid="uid://cjo0fv17q45d4" path="res://images/blocks/portalfront.png" id="1_f80cf"]
+[ext_resource type="Texture2D" uid="uid://cne3udofdcew2" path="res://images/blocks/portalback.png" id="2_6ui1t"]
+[ext_resource type="Script" path="res://addons/shaderV/rgba/generate_shapes/generateCircle.gd" id="4_8a1un"]
+
+[sub_resource type="Gradient" id="Gradient_r6mu6"]
+interpolation_mode = 1
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sku6h"]
+gradient = SubResource("Gradient_r6mu6")
+width = 6
+height = 6
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.371795, 0.132479)
+
+[sub_resource type="Curve" id="Curve_y3mcj"]
+max_value = 2.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.841509, 2), -0.0663509, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_an1c3"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.544304)
+colors = PackedColorArray(0.27451, 0, 0.890196, 1, 1, 0.247059, 0, 1)
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_baak8"]
+default_input_values = [1, Vector3(0.5, 0.5, 0), 2, Vector3(1, 1, 2.08165e-12), 3, 1.0, 4, 0.5, 5, 1000.0, 6, Vector3(2.08165e-12, 2.08165e-12, 2.08165e-12), 7, 1.0]
+initialized = true
+script = ExtResource("4_8a1un")
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_0e7i5"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_dpfsd"]
+parameter_name = "inRadius"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_qgx1e"]
+parameter_name = "outRadius"
+default_value_enabled = true
+default_value = 1.0
+
+[sub_resource type="VisualShader" id="VisualShader_ns3i5"]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform float inRadius = 1;
+uniform float outRadius = 1;
+
+
+// CircleShape
+#include \"res://addons/shaderV/rgba/generate_shapes/generateCircle.gdshaderinc\"
+
+void fragment() {
+// Input:3
+	vec2 n_out3p0 = UV;
+
+
+// FloatParameter:4
+	float n_out4p0 = inRadius;
+
+
+// FloatParameter:5
+	float n_out5p0 = outRadius;
+
+
+	vec3 n_out2p0;
+	float n_out2p1;
+// CircleShape:2
+	vec3 n_in2p1 = vec3(0.50000, 0.50000, 0.00000);
+	vec3 n_in2p2 = vec3(1.00000, 1.00000, 0.00000);
+	float n_in2p5 = 1000.00000;
+	vec3 n_in2p6 = vec3(0.00000, 0.00000, 0.00000);
+	float n_in2p7 = 1.00000;
+	{
+		n_out2p0 = n_in2p6;
+		n_out2p1 = _generateCircleFunc(vec3(n_out3p0, 0.0).xy, n_in2p1.xy, n_in2p2.xy, n_out4p0, n_out5p0, n_in2p5).a * n_in2p7;
+	}
+
+
+// Output:0
+	COLOR.rgb = n_out2p0;
+	COLOR.a = n_out2p1;
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/2/node = SubResource("VisualShaderNodeCustom_baak8")
+nodes/fragment/2/position = Vector2(80, 160)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_0e7i5")
+nodes/fragment/3/position = Vector2(-300, 200)
+nodes/fragment/4/node = SubResource("VisualShaderNodeFloatParameter_dpfsd")
+nodes/fragment/4/position = Vector2(-420, 280)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatParameter_qgx1e")
+nodes/fragment/5/position = Vector2(-109.133, 421.977)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 3, 0, 2, 0, 2, 1, 0, 1, 4, 0, 2, 3, 5, 0, 2, 4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ghdf"]
+shader = SubResource("VisualShader_ns3i5")
+shader_parameter/inRadius = 1.0
+shader_parameter/outRadius = 1.0
+
+[node name="EndPortal" type="Node2D"]
+process_mode = 3
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_a4471")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 500
+draw_order = 1
+texture = SubResource("GradientTexture2D_sku6h")
+emission_shape = 1
+emission_sphere_radius = 50.0
+direction = Vector2(5, 2.08165e-12)
+spread = 117.97
+gravity = Vector2(2.08165e-12, 6)
+initial_velocity_max = 50.0
+orbit_velocity_max = 1.0
+linear_accel_min = -100.0
+linear_accel_max = 100.0
+tangential_accel_min = -100.0
+tangential_accel_max = 100.0
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_curve = SubResource("Curve_y3mcj")
+color_initial_ramp = SubResource("Gradient_an1c3")
+
+[node name="Portalfront" type="Sprite2D" parent="."]
+texture = ExtResource("1_f80cf")
+
+[node name="Portalback" type="Sprite2D" parent="."]
+position = Vector2(-2.08165e-12, -2.08165e-12)
+texture = ExtResource("2_6ui1t")
+
+[node name="Control" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_5ghdf")
+offset_left = -480.0
+offset_top = -480.0
+offset_right = 480.0
+offset_bottom = 480.0
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+visible = false
+amount = 1000
+draw_order = 1
+texture = SubResource("GradientTexture2D_sku6h")
+emission_shape = 3
+emission_rect_extents = Vector2(500, 500)
+direction = Vector2(5, 2.08165e-12)
+spread = 117.97
+gravity = Vector2(2.08165e-12, 6)
+initial_velocity_max = 50.0
+orbit_velocity_max = 0.2
+linear_accel_min = -100.0
+linear_accel_max = 100.0
+radial_accel_max = 90.0
+tangential_accel_min = -100.0
+tangential_accel_max = 100.0
+damping_min = 100.0
+damping_max = 100.0
+scale_amount_curve = SubResource("Curve_y3mcj")
+color_initial_ramp = SubResource("Gradient_an1c3")

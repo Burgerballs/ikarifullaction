@@ -8,5 +8,5 @@ var coins:
 		return get_parent().coins
 
 func update():
-	$Score.text = 'Awesomeness Points: '+str(score)
-	$"CoinCounter/Label".text = 'x'+str(coins)
+	$CanvasModulate/Score.text = 'Awesomeness Points: '+str(score)
+	$"CanvasModulate/CoinCounter/Label".text = 'x'+str(coins)

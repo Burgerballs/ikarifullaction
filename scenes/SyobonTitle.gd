@@ -33,7 +33,7 @@ func _unhandled_key_input(event):
 	if Input.is_action_just_pressed('enter'):
 		match curSelected:
 			0:
-				Globals.enter_level('world_1/tutorial')
+				Globals.transition_scene('res://scenes/DEMO_LevelSelect.tscn')
 			1:
 				Globals.transition_scene('res://scenes/SyobonOptions.tscn')
 func changeSel(a):

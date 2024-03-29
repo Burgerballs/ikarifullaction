@@ -19,7 +19,7 @@ func _on__on_hit_wall():
 			glug = false
 			break
 	if glug: speed *= -1
-	if kicked && glug: Globals.play_sound('jumpBlock')
+	if kicked && glug && $VisibleOnScreenNotifier2D.is_on_screen(): Globals.play_sound('jumpBlock')
 	
 func _physics_process(delta):
 	super._physics_process(delta)

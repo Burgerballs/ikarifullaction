@@ -210,6 +210,9 @@ position = Vector2(-14.5, -26)
 shape = SubResource("RectangleShape2D_a48jo")
 debug_color = Color(1, 0, 0, 0.482353)
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-14, -26)
+
 [connection signal="_on_hit_wall" from="." to="." method="_on__on_hit_wall"]
 [connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
