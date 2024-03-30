@@ -22,6 +22,10 @@ func _ready():
 	playerChar = load('res://objects/players/' +player+ '.tscn').instantiate()
 	add_child(playerChar)
 	playerChar.position = playerPos
+	if (!map.start_floating):
+		playerChar.velocity.y +=2000
+	if map.has_method('post_ready'):
+		map.call('post_ready')
 func _physics_process(delta):
 	playerCam.position.x = playerChar.position.x if !lockCameraX else lockPos.x
 	playerCam.position.y = playerChar.position.y if !lockCameraY else lockPos.y
@@ -30,8 +34,15 @@ func _unhandled_key_input(event):
 		add_child(load("res://scenes/IkariPause.tscn").instantiate())
 func _process(delta):
 	$HUD.update()
-func start_cutscene():
-	pass
+	$"HUD/CanvasModulate".visible = !cutsceneMode
+func start_cutscene(cutscn):
+	cutsceneMode = true
+	playerChar.dead = true
+	for i in cutscn:
+		var timer = get_tree().create_timer(i[0]).timeout.connect(i[1])
+	playerChar.collision_layer = 1
+	playerChar.collision_mask = 1
+	playerChar.enablePhysics = false
 func kill():
 	Globals.play_sound('die')
 	lockPos.x = playerChar.position.x if !lockCameraX else lockPos.x

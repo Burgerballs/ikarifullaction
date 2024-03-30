@@ -1,5 +1,4 @@
 extends BaseMap
-@onready var game = $'../'
 func on_trigger(a,b):
 	match a:
 		'lock_cam':

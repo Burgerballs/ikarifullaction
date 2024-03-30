@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0bvqj38ff40o"]
+
+[ext_resource type="Script" path="res://maps/testicals/cutscenetest.gd" id="1_6w16s"]
+[ext_resource type="AudioStream" uid="uid://bafkgfyss48wo" path="res://audio/bgm/BGM_jungle.ogg" id="2_dc2mx"]
+[ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="3_ybtwd"]
+[ext_resource type="PackedScene" uid="uid://bio0d5et1ifoj" path="res://objects/players/Cutscene_Actor.tscn" id="4_ywgdi"]
+
+[sub_resource type="Animation" id="Animation_3njfr"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfa70"]
+_data = {
+"new_animation": SubResource("Animation_3njfr")
+}
+
+[node name="Cutscenetest" type="Node2D"]
+script = ExtResource("1_6w16s")
+bgm = ExtResource("2_dc2mx")
+
+[node name="PlayerSpawn" type="Node2D" parent="."]
+position = Vector2(-45, 375)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("3_ybtwd")
+format = 2
+layer_0/tile_data = PackedInt32Array(1048567, 1, 0, 1048568, 1, 0, 1048569, 1, 0, 1048570, 1, 0, 1048571, 1, 0, 1048572, 1, 0, 1048573, 1, 0, 1048574, 1, 0, 1048575, 1, 0, 983040, 1, 0, 983041, 1, 0, 983042, 1, 0, 983043, 1, 0, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 1, 0, 983054, 1, 0, 1048566, 1, 0, 1048565, 1, 0, 1048564, 1, 0, 1048563, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983055, 1, 0, 1048562, 1, 0, 1048561, 1, 0, 1048560, 1, 0, 1048559, 1, 0, 1048558, 1, 0, 1048557, 1, 0, 1048556, 1, 0, 983064, 1, 0, 983065, 1, 0, 983066, 1, 0, 983067, 1, 0, 983068, 1, 0, 983069, 1, 0, 983070, 1, 0, 983071, 1, 0, 983072, 1, 0, 983073, 1, 0, 983074, 1, 0, 983075, 1, 0, 983076, 1, 0, 983077, 1, 0, 983078, 1, 0, 983079, 1, 0, 983080, 1, 0, 983081, 1, 0, 983082, 1, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_top = 600.0
+offset_right = 160.0
+offset_bottom = 675.0
+scale = Vector2(1.5, 1)
+text = "ikari test cutscene
+
+this cutscene will feature ikari walking happily going along with her day then suddenly the purple horse appear!!
+so screen fade to black 1 second later we see bloody horse on the floor... how could she do this..."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kfa70")
+}
+
+[node name="Ikari_Skinwalker" parent="." instance=ExtResource("4_ywgdi")]
+position = Vector2(0, 435)
