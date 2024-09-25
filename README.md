@@ -7,7 +7,6 @@ The game is centered around you playing as the totally awesome Ikari and her fri
 
 The current Ikariers are:
 * Pixa - Artist/Animator
-*  Mya/Weedy - Artist
 *  Burgerballs - Programmer, Level Designer and Musician
 *  Nuv - Musician
 *  Raven/Null - Professional Existing Connoisseur and Purple Horse Virus Patient Zero
