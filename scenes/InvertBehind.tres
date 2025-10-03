@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=7 format=3 uid="uid://b3oxvhoc24mfr"]
 
-[ext_resource type="Script" path="res://addons/shaderV/rgba/inverseColor.gd" id="1_7eke4"]
+[ext_resource type="Script" uid="uid://cfnc7q6yh73e5" path="res://addons/shaderV/rgba/inverseColor.gd" id="1_7eke4"]
 
 [sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_3qccn"]
 default_input_values = [2, 1.0]

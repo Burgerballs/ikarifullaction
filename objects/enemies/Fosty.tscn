@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dne2irtgxa1dn"]
 
-[ext_resource type="Script" path="res://objects/enemies/Fosty.gd" id="1_wy70l"]
+[ext_resource type="Script" uid="uid://ucikgn1ivy3i" path="res://objects/enemies/Fosty.gd" id="1_wy70l"]
 [ext_resource type="Texture2D" uid="uid://d4kxb1iqjge2" path="res://images/enemies/fosty.png" id="2_rsfhg"]
 
 [sub_resource type="Animation" id="Animation_1ly6s"]
@@ -99,9 +99,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n3g23"]
 _data = {
-"RESET": SubResource("Animation_1ly6s"),
-"running": SubResource("Animation_vermv"),
-"shell": SubResource("Animation_4jxnb")
+&"RESET": SubResource("Animation_1ly6s"),
+&"running": SubResource("Animation_vermv"),
+&"shell": SubResource("Animation_4jxnb")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdhqi"]
@@ -163,8 +163,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jdb6e"]
 _data = {
-"RESET": SubResource("Animation_wg4k7"),
-"shell": SubResource("Animation_now8c")
+&"RESET": SubResource("Animation_wg4k7"),
+&"shell": SubResource("Animation_now8c")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a48jo"]

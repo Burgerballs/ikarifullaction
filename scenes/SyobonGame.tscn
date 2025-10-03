@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://y6ek7523hsii"]
 
-[ext_resource type="Script" path="res://scenes/SyobonGame.gd" id="1_vi50f"]
+[ext_resource type="Script" uid="uid://b1xk614ty3b5q" path="res://scenes/SyobonGame.gd" id="1_vi50f"]
 [ext_resource type="PackedScene" uid="uid://cddhlft02vklm" path="res://objects/ui/HUD.tscn" id="3_yexb4"]
 
 [node name="Node2D" type="Node2D"]

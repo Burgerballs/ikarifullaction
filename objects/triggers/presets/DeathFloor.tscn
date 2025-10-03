@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://uqk1htth4oo4"]
 
-[ext_resource type="Script" path="res://objects/triggers/MapCaller.gd" id="1_c8cnp"]
-[ext_resource type="Script" path="res://objects/triggers/presets/DeathFloor.gd" id="1_ltdpl"]
+[ext_resource type="Script" uid="uid://cjrxkar3osvpk" path="res://objects/triggers/MapCaller.gd" id="1_c8cnp"]
+[ext_resource type="Script" uid="uid://kdmg81ncw7vs" path="res://objects/triggers/presets/DeathFloor.gd" id="1_ltdpl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_anoy3"]
 

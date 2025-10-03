@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4dj6n7yyc0ir"]
 
 [ext_resource type="Texture2D" uid="uid://b88m4uymuturx" path="res://images/mm_play.png" id="1_mapg8"]
-[ext_resource type="Script" path="res://objects/ui/MainMenuSelection.gd" id="1_oq8gg"]
+[ext_resource type="Script" uid="uid://dkmnhb4ul4tuy" path="res://objects/ui/MainMenuSelection.gd" id="1_oq8gg"]
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="2_jibv5"]
 
 [sub_resource type="Gradient" id="Gradient_i6ell"]

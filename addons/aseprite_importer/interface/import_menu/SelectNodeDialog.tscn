@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://bt2nb1kaah3sw"]
 
-[ext_resource type="Script" path="res://addons/aseprite_importer/interface/import_menu/SelectNodeDialog.gd" id="1"]
+[ext_resource type="Script" uid="uid://dum8rdqyfhifv" path="res://addons/aseprite_importer/interface/import_menu/SelectNodeDialog.gd" id="1"]
 
 [node name="SelectNodeDialog" type="Popup"]
 title = "Select a Node"

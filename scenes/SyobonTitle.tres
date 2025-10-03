@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://cijg40qwfhqly"]
 
-[ext_resource type="Script" path="res://addons/shaderV/uv/transformUV.gd" id="1_hwecc"]
+[ext_resource type="Script" uid="uid://cojmnlxtu4o06" path="res://addons/shaderV/uv/transformUV.gd" id="1_hwecc"]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_32uif"]
 input_name = "uv"

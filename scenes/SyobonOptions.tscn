@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cl7yxyxctm8h6"]
+[gd_scene load_steps=18 format=3 uid="uid://cl7yxyxctm8h6"]
 
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="1_r7686"]
-[ext_resource type="Script" path="res://objects/SyobonOptions.gd" id="1_yqq8q"]
-[ext_resource type="Script" path="res://classes/options/OptionNumber.gd" id="2_t7js6"]
+[ext_resource type="Script" uid="uid://wugcll3wn84u" path="res://objects/SyobonOptions.gd" id="1_yqq8q"]
+[ext_resource type="Script" uid="uid://t7x5n4cslt6i" path="res://classes/options/OptionBase.gd" id="2_4a0ob"]
+[ext_resource type="Script" uid="uid://cjn3rustj1l58" path="res://classes/options/OptionNumber.gd" id="2_t7js6"]
 [ext_resource type="Texture2D" uid="uid://pikfmt71iou3" path="res://images/gui shit.png" id="2_ub0e1"]
-[ext_resource type="Script" path="res://classes/options/OptionBoolean.gd" id="3_p0dsr"]
+[ext_resource type="Script" uid="uid://f28jaulc6ced" path="res://classes/options/OptionBoolean.gd" id="3_p0dsr"]
 
 [sub_resource type="Resource" id="Resource_mhhy6"]
 script = ExtResource("2_t7js6")
@@ -71,7 +72,7 @@ font = ExtResource("1_r7686")
 
 [node name="SyobonOptions" type="CanvasLayer"]
 script = ExtResource("1_yqq8q")
-options = Array[Resource("res://classes/options/OptionBase.gd")]([SubResource("Resource_mhhy6"), SubResource("Resource_st6tl"), SubResource("Resource_1s5sr")])
+options = Array[ExtResource("2_4a0ob")]([SubResource("Resource_mhhy6"), SubResource("Resource_st6tl"), SubResource("Resource_1s5sr")])
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(2.08165e-12, 30)

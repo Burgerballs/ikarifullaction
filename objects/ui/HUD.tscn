@@ -1,46 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cddhlft02vklm"]
+[gd_scene load_steps=14 format=3 uid="uid://cddhlft02vklm"]
 
 [ext_resource type="PackedScene" uid="uid://c0fcoecnia2gk" path="res://objects/ui/HUD/CoinCounter.tscn" id="1_m7rsb"]
-[ext_resource type="Script" path="res://objects/ui/HUD.gd" id="1_sne3c"]
+[ext_resource type="Script" uid="uid://ivvpf6hqaatw" path="res://objects/ui/HUD.gd" id="1_sne3c"]
 [ext_resource type="PackedScene" uid="uid://bvtcjnox70rs7" path="res://objects/ui/HUD/Score.tscn" id="2_yvx3a"]
-[ext_resource type="Texture2D" uid="uid://gy4lkcb76gsm" path="res://objects/ui/HUD/epic images.png" id="3_mrhd4"]
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="5_dwjmp"]
-
-[sub_resource type="Animation" id="Animation_2g3tu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_kvaqb"]
-resource_name = "ikari"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(84, 89, 273, 275)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ichqs"]
-_data = {
-"RESET": SubResource("Animation_2g3tu"),
-"ikari": SubResource("Animation_kvaqb")
-}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrqrc"]
 content_margin_left = 2.0
@@ -103,8 +66,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_djii6"]
 _data = {
-"RESET": SubResource("Animation_vl6g7"),
-"hit": SubResource("Animation_xbjdw")
+&"RESET": SubResource("Animation_vl6g7"),
+&"hit": SubResource("Animation_xbjdw")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_flau6"]
@@ -147,20 +110,6 @@ grow_horizontal = 0
 text = "Score: 0"
 vertical_alignment = 1
 
-[node name="EpicImages" type="Sprite2D" parent="CanvasModulate"]
-texture_filter = 1
-position = Vector2(3, 3)
-scale = Vector2(0.447, 0.447)
-texture = ExtResource("3_mrhd4")
-centered = false
-region_enabled = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate/EpicImages"]
-libraries = {
-"": SubResource("AnimationLibrary_ichqs")
-}
-autoplay = "ikari"
-
 [node name="ComboLabel" type="Label" parent="CanvasModulate"]
 texture_filter = 1
 anchors_preset = 2
@@ -178,11 +127,11 @@ label_settings = SubResource("LabelSettings_q1bof")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasModulate/ComboLabel"]
 libraries = {
-"": SubResource("AnimationLibrary_djii6")
+&"": SubResource("AnimationLibrary_djii6")
 }
 
 [node name="Label" type="Label" parent="CanvasModulate/ComboLabel"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 2.0
 offset_top = -11.0
 offset_right = 115.0

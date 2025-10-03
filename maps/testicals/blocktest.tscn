@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://rk2d3ls84q3m"]
 
-[ext_resource type="Script" path="res://maps/BaseMap.gd" id="1_fl3ra"]
+[ext_resource type="Script" uid="uid://c56ddk3lxefys" path="res://maps/BaseMap.gd" id="1_fl3ra"]
 [ext_resource type="AudioStream" uid="uid://cug0adikyas2v" path="res://audio/bgm/BGM_clod_valley.ogg" id="2_bumex"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="3_cm4n2"]
 [ext_resource type="PackedScene" uid="uid://da32itsrva28p" path="res://objects/blocks/QMark.tscn" id="4_0tf30"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://do54pqrtruaor"]
 
-[ext_resource type="Script" path="res://maps/world_1/tutorial.gd" id="1_koq5r"]
+[ext_resource type="Script" uid="uid://lmbdav5bksqm" path="res://maps/world_1/tutorial.gd" id="1_koq5r"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="2_3k4tb"]
 [ext_resource type="AudioStream" uid="uid://cug0adikyas2v" path="res://audio/bgm/BGM_clod_valley.ogg" id="2_rvd4o"]
 [ext_resource type="PackedScene" uid="uid://cqls1j8expggt" path="res://maps/BGs/sky.tscn" id="3_xhdr0"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ig6ul0so18kp" path="res://images/BGs/hills/new/toast.png" id="5_3wc4o"]
 [ext_resource type="Texture2D" uid="uid://d3nx8acol8bqv" path="res://images/BGs/hills/new/hill2.png" id="5_17mah"]
 [ext_resource type="PackedScene" uid="uid://bm7s41plxixei" path="res://objects/triggers/presets/Jellosharp.tscn" id="5_c4srg"]
-[ext_resource type="Script" path="res://objects/triggers/MapCaller.gd" id="6_3l4tr"]
+[ext_resource type="Script" uid="uid://cjrxkar3osvpk" path="res://objects/triggers/MapCaller.gd" id="6_3l4tr"]
 [ext_resource type="PackedScene" uid="uid://deps3ospdu8qn" path="res://objects/enemies/Raddish.tscn" id="7_fg7a7"]
 [ext_resource type="PackedScene" uid="uid://dtiqx0c46emyu" path="res://objects/enemies/Runny.tscn" id="8_1yjm3"]
 [ext_resource type="PackedScene" uid="uid://dd28e1na06yv0" path="res://objects/triggers/presets/Coin.tscn" id="9_g6vbf"]

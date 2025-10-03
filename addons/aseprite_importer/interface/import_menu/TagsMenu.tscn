@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://btww3kuriv6sb"]
 
-[ext_resource type="Script" path="res://addons/aseprite_importer/interface/import_menu/TagsMenu.gd" id="1"]
+[ext_resource type="Script" uid="uid://bam3lag5k6hqm" path="res://addons/aseprite_importer/interface/import_menu/TagsMenu.gd" id="1"]
 
 [node name="TagsMenu" type="VBoxContainer"]
 size_flags_vertical = 3

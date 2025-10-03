@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://da32itsrva28p"]
 
 [ext_resource type="Texture2D" uid="uid://bgm0j7oevq845" path="res://images/blocks/itembloxs.png" id="1_5ajtk"]
-[ext_resource type="Script" path="res://objects/blocks/QMark.gd" id="1_e3gst"]
+[ext_resource type="Script" uid="uid://dpmsmqdhweoyb" path="res://objects/blocks/QMark.gd" id="1_e3gst"]
 
 [sub_resource type="Animation" id="Animation_u3ers"]
 length = 0.1
@@ -413,21 +413,21 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3jxwr"]
 _data = {
-"empty1": SubResource("Animation_u3ers"),
-"empty2": SubResource("Animation_l43s0"),
-"empty3": SubResource("Animation_405l2"),
-"empty4": SubResource("Animation_8uk15"),
-"empty5": SubResource("Animation_v0xcq"),
-"hit1": SubResource("Animation_2b0am"),
-"hit2": SubResource("Animation_d7dro"),
-"hit3": SubResource("Animation_50bsu"),
-"hit4": SubResource("Animation_vgkap"),
-"hit5": SubResource("Animation_031b0"),
-"idle1": SubResource("Animation_m42td"),
-"idle2": SubResource("Animation_7251w"),
-"idle3": SubResource("Animation_ngk7r"),
-"idle4": SubResource("Animation_ueyea"),
-"idle5": SubResource("Animation_dcjw3")
+&"empty1": SubResource("Animation_u3ers"),
+&"empty2": SubResource("Animation_l43s0"),
+&"empty3": SubResource("Animation_405l2"),
+&"empty4": SubResource("Animation_8uk15"),
+&"empty5": SubResource("Animation_v0xcq"),
+&"hit1": SubResource("Animation_2b0am"),
+&"hit2": SubResource("Animation_d7dro"),
+&"hit3": SubResource("Animation_50bsu"),
+&"hit4": SubResource("Animation_vgkap"),
+&"hit5": SubResource("Animation_031b0"),
+&"idle1": SubResource("Animation_m42td"),
+&"idle2": SubResource("Animation_7251w"),
+&"idle3": SubResource("Animation_ngk7r"),
+&"idle4": SubResource("Animation_ueyea"),
+&"idle5": SubResource("Animation_dcjw3")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ot1mj"]
@@ -443,7 +443,7 @@ script = ExtResource("1_e3gst")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_3jxwr")
+&"": SubResource("AnimationLibrary_3jxwr")
 }
 autoplay = "idle1"
 

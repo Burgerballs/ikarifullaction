@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dd28e1na06yv0"]
 
 [ext_resource type="Texture2D" uid="uid://bo7ecd6e7xfjg" path="res://images/starcoin.png" id="1_gw3u4"]
-[ext_resource type="Script" path="res://objects/triggers/presets/Coin.gd" id="2_1xw31"]
-[ext_resource type="Script" path="res://objects/triggers/MapCaller.gd" id="3_064qx"]
+[ext_resource type="Script" uid="uid://dmk5j3c2yhmgj" path="res://objects/triggers/presets/Coin.gd" id="2_1xw31"]
+[ext_resource type="Script" uid="uid://cjrxkar3osvpk" path="res://objects/triggers/MapCaller.gd" id="3_064qx"]
 
 [sub_resource type="Animation" id="Animation_wmxkx"]
 length = 0.4
@@ -141,11 +141,11 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jgi1i"]
 _data = {
-"face1": SubResource("Animation_wmxkx"),
-"face2": SubResource("Animation_6d4l6"),
-"face3": SubResource("Animation_ovypd"),
-"face4": SubResource("Animation_ovc0y"),
-"spin": SubResource("Animation_kqlv7")
+&"face1": SubResource("Animation_wmxkx"),
+&"face2": SubResource("Animation_6d4l6"),
+&"face3": SubResource("Animation_ovypd"),
+&"face4": SubResource("Animation_ovc0y"),
+&"spin": SubResource("Animation_kqlv7")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjhwu"]

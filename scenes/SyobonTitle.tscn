@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=3 uid="uid://b3okeve70ia0r"]
 
 [ext_resource type="PackedScene" uid="uid://b4dj6n7yyc0ir" path="res://objects/ui/MainMenuSelection.tscn" id="1_nlenw"]
-[ext_resource type="Script" path="res://scenes/SyobonTitle.gd" id="1_pnxlh"]
+[ext_resource type="Script" uid="uid://dv4ywvf0epchs" path="res://scenes/SyobonTitle.gd" id="1_pnxlh"]
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="2_8loep"]
-[ext_resource type="Shader" path="res://scenes/SyobonTitle.gdshader" id="2_xjft7"]
+[ext_resource type="Shader" uid="uid://dbxbjbf2p5eba" path="res://scenes/SyobonTitle.gdshader" id="2_xjft7"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="3_bqn1q"]
 [ext_resource type="PackedScene" uid="uid://b2p2g2e5bpu77" path="res://objects/ui/Title.tscn" id="3_p010r"]
 [ext_resource type="PackedScene" uid="uid://bm7s41plxixei" path="res://objects/triggers/presets/Jellosharp.tscn" id="7_jmxcq"]

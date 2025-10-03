@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=3 uid="uid://blqy7d0bfhwex"]
 
 [ext_resource type="Texture2D" uid="uid://cvd5l5hu4wgkh" path="res://images/player/ikari.png" id="1_f8cek"]
-[ext_resource type="Script" path="res://objects/players/Player.gd" id="2_4mvda"]
+[ext_resource type="Script" uid="uid://d1byi5wngr0n2" path="res://objects/players/Player.gd" id="2_4mvda"]
 
 [sub_resource type="Animation" id="Animation_i8gao"]
 length = 0.2
@@ -817,36 +817,36 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ql6gc"]
 _data = {
-"crouch": SubResource("Animation_i8gao"),
-"death": SubResource("Animation_2jc5h"),
-"fall": SubResource("Animation_tgb11"),
-"groundpound": SubResource("Animation_r7k71"),
-"groundpoundstart": SubResource("Animation_4qkhw"),
-"idle": SubResource("Animation_a00jw"),
-"jump": SubResource("Animation_bqmkj"),
-"mag_crouch": SubResource("Animation_jsxws"),
-"mag_death": SubResource("Animation_chk0j"),
-"mag_fall": SubResource("Animation_n8u75"),
-"mag_grab": SubResource("Animation_dqu0l"),
-"mag_grab_s": SubResource("Animation_eq6h7"),
-"mag_grabcrouch": SubResource("Animation_uy8d8"),
-"mag_grabcrouch_s": SubResource("Animation_74fe8"),
-"mag_idle": SubResource("Animation_65ned"),
-"mag_jump": SubResource("Animation_ot5py"),
-"mag_pound": SubResource("Animation_2qya2"),
-"mag_poundstart": SubResource("Animation_f6eem"),
-"mag_spin": SubResource("Animation_ij5un"),
-"mag_trans": SubResource("Animation_0j1qi"),
-"mag_trip1": SubResource("Animation_1qxao"),
-"mag_trip2": SubResource("Animation_k3l7d"),
-"mag_walk": SubResource("Animation_vitc6"),
-"power": SubResource("Animation_tyvfc"),
-"powerup": SubResource("Animation_bqqxt"),
-"spin": SubResource("Animation_6xgqq"),
-"trip": SubResource("Animation_us81w"),
-"trip2": SubResource("Animation_y7gg6"),
-"walk": SubResource("Animation_u6rbf"),
-"xtra": SubResource("Animation_c63qi")
+&"crouch": SubResource("Animation_i8gao"),
+&"death": SubResource("Animation_2jc5h"),
+&"fall": SubResource("Animation_tgb11"),
+&"groundpound": SubResource("Animation_r7k71"),
+&"groundpoundstart": SubResource("Animation_4qkhw"),
+&"idle": SubResource("Animation_a00jw"),
+&"jump": SubResource("Animation_bqmkj"),
+&"mag_crouch": SubResource("Animation_jsxws"),
+&"mag_death": SubResource("Animation_chk0j"),
+&"mag_fall": SubResource("Animation_n8u75"),
+&"mag_grab": SubResource("Animation_dqu0l"),
+&"mag_grab_s": SubResource("Animation_eq6h7"),
+&"mag_grabcrouch": SubResource("Animation_uy8d8"),
+&"mag_grabcrouch_s": SubResource("Animation_74fe8"),
+&"mag_idle": SubResource("Animation_65ned"),
+&"mag_jump": SubResource("Animation_ot5py"),
+&"mag_pound": SubResource("Animation_2qya2"),
+&"mag_poundstart": SubResource("Animation_f6eem"),
+&"mag_spin": SubResource("Animation_ij5un"),
+&"mag_trans": SubResource("Animation_0j1qi"),
+&"mag_trip1": SubResource("Animation_1qxao"),
+&"mag_trip2": SubResource("Animation_k3l7d"),
+&"mag_walk": SubResource("Animation_vitc6"),
+&"power": SubResource("Animation_tyvfc"),
+&"powerup": SubResource("Animation_bqqxt"),
+&"spin": SubResource("Animation_6xgqq"),
+&"trip": SubResource("Animation_us81w"),
+&"trip2": SubResource("Animation_y7gg6"),
+&"walk": SubResource("Animation_u6rbf"),
+&"xtra": SubResource("Animation_c63qi")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8b3a"]

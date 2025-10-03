@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://c17fy0vkhc1uo"]
 
-[ext_resource type="Script" path="res://addons/aseprite_importer/interface/spritesheet_inspector/SpritesheetView.gd" id="2"]
+[ext_resource type="Script" uid="uid://2ivwpn5tpqhx" path="res://addons/aseprite_importer/interface/spritesheet_inspector/SpritesheetView.gd" id="2"]
 
 [sub_resource type="StyleBoxFlat" id="1"]
 content_margin_left = 4.0

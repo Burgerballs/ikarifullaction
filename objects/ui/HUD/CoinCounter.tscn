@@ -62,8 +62,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lrf2q"]
 _data = {
-"face": SubResource("Animation_p1fgp"),
-"spin": SubResource("Animation_yn1gr")
+&"face": SubResource("Animation_p1fgp"),
+&"spin": SubResource("Animation_yn1gr")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_4hw3d"]

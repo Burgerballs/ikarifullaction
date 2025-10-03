@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://c2oyq40cksige"]
 
-[ext_resource type="Script" path="res://objects/triggers/presets/End_Portal.gd" id="1_a4471"]
+[ext_resource type="Script" uid="uid://ctia42fn4gh4n" path="res://objects/triggers/presets/End_Portal.gd" id="1_a4471"]
 [ext_resource type="Texture2D" uid="uid://cjo0fv17q45d4" path="res://images/blocks/portalfront.png" id="1_f80cf"]
 [ext_resource type="Texture2D" uid="uid://cne3udofdcew2" path="res://images/blocks/portalback.png" id="2_6ui1t"]
-[ext_resource type="Script" path="res://addons/shaderV/rgba/generate_shapes/generateCircle.gd" id="4_8a1un"]
+[ext_resource type="Script" uid="uid://dblmcpd6rle75" path="res://addons/shaderV/rgba/generate_shapes/generateCircle.gd" id="4_8a1un"]
 
 [sub_resource type="Gradient" id="Gradient_r6mu6"]
 interpolation_mode = 1
@@ -18,7 +18,7 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.371795, 0.132479)
 
 [sub_resource type="Curve" id="Curve_y3mcj"]
-max_value = 2.0
+_limits = [0.0, 2.0, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.841509, 2), -0.0663509, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
@@ -49,8 +49,8 @@ default_value = 1.0
 code = "shader_type canvas_item;
 render_mode blend_mix;
 
-uniform float inRadius = 1;
-uniform float outRadius = 1;
+uniform float inRadius = 1.0;
+uniform float outRadius = 1.0;
 
 
 // CircleShape

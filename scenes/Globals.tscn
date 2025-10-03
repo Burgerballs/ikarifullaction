@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://pxhtw3syi7hn"]
 
-[ext_resource type="Script" path="res://scenes/Globals.gd" id="1_ro1it"]
-[ext_resource type="Shader" path="res://scenes/InvertBehind.gdshader" id="2_l0nr4"]
+[ext_resource type="Script" uid="uid://bvd18gafnjmck" path="res://scenes/Globals.gd" id="1_ro1it"]
+[ext_resource type="Shader" uid="uid://dg1krncsuf7dl" path="res://scenes/InvertBehind.gdshader" id="2_l0nr4"]
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="2_ogbot"]
 [ext_resource type="AudioStream" uid="uid://duffpxb65olhf" path="res://audio/SE_jumpBlock.ogg" id="3_rq1tr"]
 
@@ -132,9 +132,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rta4e"]
 _data = {
-"RESET": SubResource("Animation_ibef0"),
-"mosaic-in": SubResource("Animation_ioq1o"),
-"mosaic-out": SubResource("Animation_fp8sf")
+&"RESET": SubResource("Animation_ibef0"),
+&"mosaic-in": SubResource("Animation_ioq1o"),
+&"mosaic-out": SubResource("Animation_fp8sf")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bw3l8"]

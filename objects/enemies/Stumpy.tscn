@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://dqiidqydaimn4"]
 
-[ext_resource type="Script" path="res://objects/enemies/Stumpy.gd" id="1_oq6uy"]
+[ext_resource type="Script" uid="uid://dek4klpoc58qc" path="res://objects/enemies/Stumpy.gd" id="1_oq6uy"]
 [ext_resource type="Texture2D" uid="uid://bs54jaryvxg46" path="res://images/enemies/stumpy.png" id="2_lp0g5"]
 
 [sub_resource type="Animation" id="Animation_0qy04"]
@@ -114,10 +114,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n3g23"]
 _data = {
-"b_trans": SubResource("Animation_0qy04"),
-"g_trans": SubResource("Animation_kecuu"),
-"running": SubResource("Animation_vermv"),
-"shell": SubResource("Animation_4jxnb")
+&"b_trans": SubResource("Animation_0qy04"),
+&"g_trans": SubResource("Animation_kecuu"),
+&"running": SubResource("Animation_vermv"),
+&"shell": SubResource("Animation_4jxnb")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdhqi"]
@@ -179,8 +179,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jdb6e"]
 _data = {
-"RESET": SubResource("Animation_wg4k7"),
-"shell": SubResource("Animation_now8c")
+&"RESET": SubResource("Animation_wg4k7"),
+&"shell": SubResource("Animation_now8c")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a48jo"]

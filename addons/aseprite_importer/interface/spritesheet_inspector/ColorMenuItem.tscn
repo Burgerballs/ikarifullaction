@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://bd4fblijq0enb"]
 
-[ext_resource type="Script" path="res://addons/aseprite_importer/interface/spritesheet_inspector/ColorMenuItem.gd" id="1"]
+[ext_resource type="Script" uid="uid://bs6tftogdvu15" path="res://addons/aseprite_importer/interface/spritesheet_inspector/ColorMenuItem.gd" id="1"]
 
 [node name="ColorMenuItem" type="VBoxContainer"]
 size_flags_horizontal = 3

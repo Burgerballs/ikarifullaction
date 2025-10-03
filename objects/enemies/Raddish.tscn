@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://deps3ospdu8qn"]
 
-[ext_resource type="Script" path="res://objects/enemies/Raddish.gd" id="1_umnp4"]
+[ext_resource type="Script" uid="uid://d4ljh2f8wrama" path="res://objects/enemies/Raddish.gd" id="1_umnp4"]
 [ext_resource type="Texture2D" uid="uid://cn78ipndinkw1" path="res://images/enemies/newraddish.png" id="2_4oel3"]
 
 [sub_resource type="Animation" id="Animation_r4m2k"]
@@ -87,9 +87,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n3g23"]
 _data = {
-"bite": SubResource("Animation_r4m2k"),
-"idle": SubResource("Animation_fgth8"),
-"spin": SubResource("Animation_q7onk")
+&"bite": SubResource("Animation_r4m2k"),
+&"idle": SubResource("Animation_fgth8"),
+&"spin": SubResource("Animation_q7onk")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vdhqi"]
@@ -115,7 +115,7 @@ region_rect = Rect2(0, 60, 32, 30)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
-"": SubResource("AnimationLibrary_n3g23")
+&"": SubResource("AnimationLibrary_n3g23")
 }
 autoplay = "spin"
 

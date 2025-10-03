@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://byc04x2ffagfp"]
 
 [ext_resource type="Texture2D" uid="uid://cuhva4lvobgu5" path="res://images/enemies/boomflower.png" id="1_m0pll"]
-[ext_resource type="Script" path="res://objects/triggers/MapCaller.gd" id="2_34udg"]
-[ext_resource type="Script" path="res://objects/triggers/presets/BoomboxFlower.gd" id="2_qpwku"]
+[ext_resource type="Script" uid="uid://cjrxkar3osvpk" path="res://objects/triggers/MapCaller.gd" id="2_34udg"]
+[ext_resource type="Script" uid="uid://tread2nio0av" path="res://objects/triggers/presets/BoomboxFlower.gd" id="2_qpwku"]
 
 [sub_resource type="Animation" id="Animation_dckee"]
 length = 0.2
@@ -115,10 +115,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wpkvw"]
 _data = {
-"hey!": SubResource("Animation_dckee"),
-"idle": SubResource("Animation_bit0n"),
-"oh": SubResource("Animation_06gsy"),
-"stare": SubResource("Animation_dkp24")
+&"hey!": SubResource("Animation_dckee"),
+&"idle": SubResource("Animation_bit0n"),
+&"oh": SubResource("Animation_06gsy"),
+&"stare": SubResource("Animation_dkp24")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bugto"]

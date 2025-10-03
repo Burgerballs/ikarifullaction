@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://bm7s41plxixei"]
 
 [ext_resource type="Texture2D" uid="uid://biqte76m53gq" path="res://images/BGs/jellosharp.png" id="1_h0bq3"]
-[ext_resource type="Script" path="res://objects/triggers/presets/Jellosharp.gd" id="2_adl5p"]
-[ext_resource type="Script" path="res://objects/triggers/MapCaller.gd" id="3_yt1o5"]
+[ext_resource type="Script" uid="uid://d2jy6nmsit7rq" path="res://objects/triggers/presets/Jellosharp.gd" id="2_adl5p"]
+[ext_resource type="Script" uid="uid://cjrxkar3osvpk" path="res://objects/triggers/MapCaller.gd" id="3_yt1o5"]
 [ext_resource type="Texture2D" uid="uid://viuliucssju7" path="res://images/props/jellobox.png" id="4_jsc1h"]
-[ext_resource type="Shader" path="res://scenes/InvertBehind.gdshader" id="4_us1xl"]
+[ext_resource type="Shader" uid="uid://dg1krncsuf7dl" path="res://scenes/InvertBehind.gdshader" id="4_us1xl"]
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="5_tfoxu"]
 
 [sub_resource type="Animation" id="Animation_rmewv"]
@@ -117,10 +117,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wpkvw"]
 _data = {
-"dance": SubResource("Animation_rmewv"),
-"hecomes": SubResource("Animation_kpqlc"),
-"standing": SubResource("Animation_xr3ji"),
-"where": SubResource("Animation_jgf16")
+&"dance": SubResource("Animation_rmewv"),
+&"hecomes": SubResource("Animation_kpqlc"),
+&"standing": SubResource("Animation_xr3ji"),
+&"where": SubResource("Animation_jgf16")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hjhwu"]
@@ -212,9 +212,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ew8h4"]
 _data = {
-"close": SubResource("Animation_ql3sw"),
-"open": SubResource("Animation_q8fwa"),
-"speaking": SubResource("Animation_6omkm")
+&"close": SubResource("Animation_ql3sw"),
+&"open": SubResource("Animation_q8fwa"),
+&"speaking": SubResource("Animation_6omkm")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_l1pa8"]

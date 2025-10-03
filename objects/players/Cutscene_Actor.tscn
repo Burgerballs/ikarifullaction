@@ -1,6 +1,6 @@
 [gd_scene load_steps=49 format=3 uid="uid://bio0d5et1ifoj"]
 
-[ext_resource type="Script" path="res://objects/players/Cutscene_Actor.gd" id="1_iw21q"]
+[ext_resource type="Script" uid="uid://xxue007m6mw3" path="res://objects/players/Cutscene_Actor.gd" id="1_iw21q"]
 [ext_resource type="Texture2D" uid="uid://cvd5l5hu4wgkh" path="res://images/player/ikari.png" id="2_trgq5"]
 
 [sub_resource type="Animation" id="Animation_xyaby"]
@@ -1086,46 +1086,46 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y32un"]
 _data = {
-"crouch": SubResource("Animation_xyaby"),
-"crouchstart": SubResource("Animation_6lrdu"),
-"death": SubResource("Animation_8j1a2"),
-"fall": SubResource("Animation_f0c81"),
-"groundpound": SubResource("Animation_h1ym7"),
-"groundpoundstart": SubResource("Animation_dpb5p"),
-"idle": SubResource("Animation_ctolv"),
-"jump": SubResource("Animation_y3dth"),
-"jumpstart": SubResource("Animation_51ty1"),
-"mag_crouch": SubResource("Animation_plop1"),
-"mag_crouchstart": SubResource("Animation_j6kcm"),
-"mag_death": SubResource("Animation_yql2r"),
-"mag_fall": SubResource("Animation_l3dj8"),
-"mag_grab": SubResource("Animation_d6afe"),
-"mag_grab_s": SubResource("Animation_muo1i"),
-"mag_grabcrouch": SubResource("Animation_vijsx"),
-"mag_grabcrouch_s": SubResource("Animation_bpf0t"),
-"mag_idle": SubResource("Animation_a7kwq"),
-"mag_jump": SubResource("Animation_hjvet"),
-"mag_jumpstart": SubResource("Animation_frj2r"),
-"mag_pound": SubResource("Animation_yckfs"),
-"mag_poundstart": SubResource("Animation_rmgek"),
-"mag_spin": SubResource("Animation_xk5um"),
-"mag_trans": SubResource("Animation_cu1qq"),
-"mag_trip1": SubResource("Animation_1h64j"),
-"mag_trip2": SubResource("Animation_n7puw"),
-"mag_turn": SubResource("Animation_s71wg"),
-"mag_walk": SubResource("Animation_frek5"),
-"mag_wallfall": SubResource("Animation_fs168"),
-"mag_wallhit": SubResource("Animation_p1ruj"),
-"power": SubResource("Animation_tvqtq"),
-"powerup": SubResource("Animation_43x8d"),
-"spin": SubResource("Animation_kcsbv"),
-"trip": SubResource("Animation_oyx14"),
-"trip2": SubResource("Animation_tbdyn"),
-"turn": SubResource("Animation_kcn5q"),
-"walk": SubResource("Animation_cmdjh"),
-"wallfall": SubResource("Animation_f8ylt"),
-"wallhit": SubResource("Animation_mr2bd"),
-"xtra": SubResource("Animation_bgt5x")
+&"crouch": SubResource("Animation_xyaby"),
+&"crouchstart": SubResource("Animation_6lrdu"),
+&"death": SubResource("Animation_8j1a2"),
+&"fall": SubResource("Animation_f0c81"),
+&"groundpound": SubResource("Animation_h1ym7"),
+&"groundpoundstart": SubResource("Animation_dpb5p"),
+&"idle": SubResource("Animation_ctolv"),
+&"jump": SubResource("Animation_y3dth"),
+&"jumpstart": SubResource("Animation_51ty1"),
+&"mag_crouch": SubResource("Animation_plop1"),
+&"mag_crouchstart": SubResource("Animation_j6kcm"),
+&"mag_death": SubResource("Animation_yql2r"),
+&"mag_fall": SubResource("Animation_l3dj8"),
+&"mag_grab": SubResource("Animation_d6afe"),
+&"mag_grab_s": SubResource("Animation_muo1i"),
+&"mag_grabcrouch": SubResource("Animation_vijsx"),
+&"mag_grabcrouch_s": SubResource("Animation_bpf0t"),
+&"mag_idle": SubResource("Animation_a7kwq"),
+&"mag_jump": SubResource("Animation_hjvet"),
+&"mag_jumpstart": SubResource("Animation_frj2r"),
+&"mag_pound": SubResource("Animation_yckfs"),
+&"mag_poundstart": SubResource("Animation_rmgek"),
+&"mag_spin": SubResource("Animation_xk5um"),
+&"mag_trans": SubResource("Animation_cu1qq"),
+&"mag_trip1": SubResource("Animation_1h64j"),
+&"mag_trip2": SubResource("Animation_n7puw"),
+&"mag_turn": SubResource("Animation_s71wg"),
+&"mag_walk": SubResource("Animation_frek5"),
+&"mag_wallfall": SubResource("Animation_fs168"),
+&"mag_wallhit": SubResource("Animation_p1ruj"),
+&"power": SubResource("Animation_tvqtq"),
+&"powerup": SubResource("Animation_43x8d"),
+&"spin": SubResource("Animation_kcsbv"),
+&"trip": SubResource("Animation_oyx14"),
+&"trip2": SubResource("Animation_tbdyn"),
+&"turn": SubResource("Animation_kcn5q"),
+&"walk": SubResource("Animation_cmdjh"),
+&"wallfall": SubResource("Animation_f8ylt"),
+&"wallhit": SubResource("Animation_mr2bd"),
+&"xtra": SubResource("Animation_bgt5x")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51na1"]
@@ -1251,9 +1251,9 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wwyx6"]
 _data = {
-"RESET": SubResource("Animation_01ble"),
-"crouch": SubResource("Animation_gye7d"),
-"spin": SubResource("Animation_ic3px")
+&"RESET": SubResource("Animation_01ble"),
+&"crouch": SubResource("Animation_gye7d"),
+&"spin": SubResource("Animation_ic3px")
 }
 
 [node name="Ikari" type="CharacterBody2D" groups=["players"]]
@@ -1272,7 +1272,7 @@ region_rect = Rect2(0, 0, 49, 73)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
-"": SubResource("AnimationLibrary_y32un")
+&"": SubResource("AnimationLibrary_y32un")
 }
 autoplay = "idle"
 
@@ -1284,7 +1284,7 @@ debug_color = Color(0.996078, 0, 0, 0)
 
 [node name="AnimationTree" type="AnimationPlayer" parent="hitbox"]
 libraries = {
-"": SubResource("AnimationLibrary_wwyx6")
+&"": SubResource("AnimationLibrary_wwyx6")
 }
 
 [connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

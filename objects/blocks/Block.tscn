@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://cklegrocw1g4w"]
 
 [ext_resource type="Texture2D" uid="uid://khhd5g852gvq" path="res://images/blocks/brocks.png" id="1_tgq6o"]
-[ext_resource type="Script" path="res://objects/blocks/Block.gd" id="2_nspaj"]
+[ext_resource type="Script" uid="uid://buk3vr737epxx" path="res://objects/blocks/Block.gd" id="2_nspaj"]
 
 [sub_resource type="Animation" id="Animation_2kypk"]
 length = 0.1
@@ -494,24 +494,24 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3jxwr"]
 _data = {
-"1": SubResource("Animation_2kypk"),
-"2": SubResource("Animation_7lhul"),
-"3": SubResource("Animation_loj2p"),
-"empty1": SubResource("Animation_u3ers"),
-"empty2": SubResource("Animation_l43s0"),
-"empty3": SubResource("Animation_405l2"),
-"empty4": SubResource("Animation_8uk15"),
-"empty5": SubResource("Animation_v0xcq"),
-"hit1": SubResource("Animation_2b0am"),
-"hit2": SubResource("Animation_d7dro"),
-"hit3": SubResource("Animation_50bsu"),
-"hit4": SubResource("Animation_vgkap"),
-"hit5": SubResource("Animation_031b0"),
-"idle1": SubResource("Animation_m42td"),
-"idle2": SubResource("Animation_7251w"),
-"idle3": SubResource("Animation_ngk7r"),
-"idle4": SubResource("Animation_ueyea"),
-"idle5": SubResource("Animation_dcjw3")
+&"1": SubResource("Animation_2kypk"),
+&"2": SubResource("Animation_7lhul"),
+&"3": SubResource("Animation_loj2p"),
+&"empty1": SubResource("Animation_u3ers"),
+&"empty2": SubResource("Animation_l43s0"),
+&"empty3": SubResource("Animation_405l2"),
+&"empty4": SubResource("Animation_8uk15"),
+&"empty5": SubResource("Animation_v0xcq"),
+&"hit1": SubResource("Animation_2b0am"),
+&"hit2": SubResource("Animation_d7dro"),
+&"hit3": SubResource("Animation_50bsu"),
+&"hit4": SubResource("Animation_vgkap"),
+&"hit5": SubResource("Animation_031b0"),
+&"idle1": SubResource("Animation_m42td"),
+&"idle2": SubResource("Animation_7251w"),
+&"idle3": SubResource("Animation_ngk7r"),
+&"idle4": SubResource("Animation_ueyea"),
+&"idle5": SubResource("Animation_dcjw3")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ot1mj"]

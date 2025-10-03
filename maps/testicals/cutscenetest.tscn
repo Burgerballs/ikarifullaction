@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0bvqj38ff40o"]
 
-[ext_resource type="Script" path="res://maps/testicals/cutscenetest.gd" id="1_6w16s"]
+[ext_resource type="Script" uid="uid://cwvkqf4hkwvxa" path="res://maps/testicals/cutscenetest.gd" id="1_6w16s"]
 [ext_resource type="AudioStream" uid="uid://bafkgfyss48wo" path="res://audio/bgm/BGM_jungle.ogg" id="2_dc2mx"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="3_ybtwd"]
 [ext_resource type="PackedScene" uid="uid://bio0d5et1ifoj" path="res://objects/players/Cutscene_Actor.tscn" id="4_ywgdi"]
@@ -10,7 +10,7 @@ resource_name = "new_animation"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kfa70"]
 _data = {
-"new_animation": SubResource("Animation_3njfr")
+&"new_animation": SubResource("Animation_3njfr")
 }
 
 [node name="Cutscenetest" type="Node2D"]
@@ -37,7 +37,7 @@ so screen fade to black 1 second later we see bloody horse on the floor... how c
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_kfa70")
+&"": SubResource("AnimationLibrary_kfa70")
 }
 
 [node name="Ikari_Skinwalker" parent="." instance=ExtResource("4_ywgdi")]

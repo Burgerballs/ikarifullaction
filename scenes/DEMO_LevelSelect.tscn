@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://bn8lrtqa81mib"]
 
-[ext_resource type="Script" path="res://scenes/DEMO_LevelSelect.gd" id="1_4xllr"]
-[ext_resource type="Shader" path="res://scenes/SyobonTitle.gdshader" id="1_aqqaq"]
+[ext_resource type="Script" uid="uid://c5wae3645iwkf" path="res://scenes/DEMO_LevelSelect.gd" id="1_4xllr"]
+[ext_resource type="Shader" uid="uid://dbxbjbf2p5eba" path="res://scenes/SyobonTitle.gdshader" id="1_aqqaq"]
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="2_7jwqm"]
 [ext_resource type="TileSet" uid="uid://wvnpq88t4qhv" path="res://images/newtiles.tres" id="2_id586"]
 [ext_resource type="Texture2D" uid="uid://cf6wrx5f1urqa" path="res://images/golhit.png" id="4_hc5es"]
@@ -245,8 +245,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ln4ai"]
 _data = {
-"idle": SubResource("Animation_22j2b"),
-"talk": SubResource("Animation_odbon")
+&"idle": SubResource("Animation_22j2b"),
+&"talk": SubResource("Animation_odbon")
 }
 
 [sub_resource type="Animation" id="Animation_gqqkj"]
@@ -279,7 +279,7 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dw3th"]
 _data = {
-"talk": SubResource("Animation_gqqkj")
+&"talk": SubResource("Animation_gqqkj")
 }
 
 [sub_resource type="LabelSettings" id="LabelSettings_3v46c"]

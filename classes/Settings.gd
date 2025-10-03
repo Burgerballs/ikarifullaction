@@ -3,12 +3,13 @@ extends Node
 var _cfg_file :ConfigFile
 var _defaults :Dictionary = {}
 const _CFG_PATH = "user://freakyfile.cfg"
-var game_scale = 2:
+var game_scale = 1:
 	set(v): 
-		var window = get_window()
-		window.size = Vector2i(640 * v, 480 * v)
-		window.position = DisplayServer.screen_get_size()/2 - (window.size/2)
-		game_scale = v
+		print('broken!!')
+		#var window = get_window()
+		#window.size = Vector2i(640 * v, 480 * v)
+		#window.position = DisplayServer.screen_get_size()/2 - (window.size/2)
+		#game_scale = v
 var framerate_cap :int = 120:
 	set(v): Engine.max_fps = v; framerate_cap = v
 var vsync :bool = true:

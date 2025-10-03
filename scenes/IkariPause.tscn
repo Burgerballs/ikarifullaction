@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=3 uid="uid://uhxs203ibu8o"]
 
-[ext_resource type="Shader" path="res://scenes/InvertBehind.gdshader" id="1_c7ver"]
-[ext_resource type="Script" path="res://scenes/IkariPause.gd" id="1_pmbp2"]
-[ext_resource type="Shader" path="res://scenes/SyobonTitle.gdshader" id="1_rat7e"]
+[ext_resource type="Shader" uid="uid://dg1krncsuf7dl" path="res://scenes/InvertBehind.gdshader" id="1_c7ver"]
+[ext_resource type="Script" uid="uid://cvvtbolq0hohv" path="res://scenes/IkariPause.gd" id="1_pmbp2"]
+[ext_resource type="Shader" uid="uid://dbxbjbf2p5eba" path="res://scenes/SyobonTitle.gdshader" id="1_rat7e"]
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="1_ur63m"]
 [ext_resource type="AudioStream" uid="uid://bhg57e4mskkaj" path="res://audio/bgm/puase.mp3" id="5_4vp7o"]
 
@@ -119,8 +119,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bm7b7"]
 _data = {
-"RESET": SubResource("Animation_wutb4"),
-"enter": SubResource("Animation_r4k3i")
+&"RESET": SubResource("Animation_wutb4"),
+&"enter": SubResource("Animation_r4k3i")
 }
 
 [node name="Node2D" type="CanvasLayer"]

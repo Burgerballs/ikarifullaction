@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://3n8hvnpjidwl"]
 
 [ext_resource type="FontFile" uid="uid://ddhnx46noaxtx" path="res://fonts/sazanami-gothic.ttf" id="1_2x8fg"]
-[ext_resource type="Script" path="res://scenes/devtools/IkariTerm.gd" id="1_8ftsf"]
+[ext_resource type="Script" uid="uid://di8ff1u7vjyx1" path="res://scenes/devtools/IkariTerm.gd" id="1_8ftsf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_56spg"]
 font = ExtResource("1_2x8fg")

@@ -6,7 +6,7 @@ interpolation_color_space = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Curve" id="Curve_unme6"]
-min_value = -1.0
+_limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0.00377358, -1), 0.0, 0.0, 0, 0, Vector2(0.49434, 0.0873636), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 3
 
@@ -51,10 +51,10 @@ hue_variation_curve = SubResource("Curve_unme6")
 z_index = 1
 texture_filter = 1
 amount = 4
+texture = SubResource("GradientTexture2D_qmw0k")
 lifetime = 0.79
 explosiveness = 1.0
 fixed_fps = 24
-texture = SubResource("GradientTexture2D_qmw0k")
 direction = Vector2(2.08165e-12, 2.08165e-12)
 spread = 180.0
 gravity = Vector2(2.08165e-12, 2.08165e-12)
